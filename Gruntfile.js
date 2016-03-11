@@ -435,8 +435,7 @@ module.exports = function(grunt) {
       'concurrent:test',
       'autoprefixer',
       'connect:test',
-      'karma',
-      'jscs'
+      'karma'
   ]);
 
   grunt.registerTask('build', [
@@ -453,8 +452,7 @@ module.exports = function(grunt) {
       'uglify',
       'filerev',
       'usemin',
-      'htmlmin',
-      'jscs'
+      'htmlmin'
   ]);
 
   grunt.registerTask('default', [
