@@ -1,5 +1,7 @@
 # javascript-graph-libraries
 
+[![Build Status](https://travis-ci.org/CedricTakongmo/javascript-graph-libraries.svg?branch=master)](https://travis-ci.org/CedricTakongmo/javascript-graph-libraries)
+
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.12.1.
 
