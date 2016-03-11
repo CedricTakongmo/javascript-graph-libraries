@@ -4,19 +4,24 @@
 
 ## Quickstart
 
-1. [**NodeJS**](https://nodejs.org/en/download/) install (will be normaly install with the npm package) 
+1. Install [**NodeJS**](https://nodejs.org/en/download/)
+</br> (it will be normaly install with the npm package) 
 
 2. clone project and enter in the main directory
+</br>
 `git clone https://github.com/CedricTakongmo/javascript-graph-libraries.git`
+</br>
 `cd javascript-graph-libraries`
 
 3. Install the local dependencies 
+</br>
 `npm install`
+</br>
 `bower install`  
 
 4. Start javascript-graph-libraries
 `grunt serve`
-
+</br>
 You access to the application under [localhost:9000](http://localhost:9000)
 
 ## Testing
