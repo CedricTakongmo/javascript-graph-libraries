@@ -1,6 +1,0 @@
-{
-  "directory": "bower_components", 
-  "proxy": "http://astaro.srv:8080",
-  "https-proxy":"http://astaro.srv:8080",
-  "no-proxy":"astaro.srv:8080"
-}
