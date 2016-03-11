@@ -1,3 +1,4 @@
+/*globals $, angular, jsPlumb*/
 'use strict';
 
 /**
@@ -9,8 +10,6 @@
  */
 angular.module('javascriptGraphLibrariesApp')
     .controller('jsplumbCtrl', ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
-
-      initializate();
 
       function initializate() {
 
@@ -28,7 +27,7 @@ angular.module('javascriptGraphLibrariesApp')
         }, 5000);
         var $parent = $('.jsplumb-main #canvas').empty(),
          connections = {};
-        data.graph.nodes.forEach(function(node, index) {
+        data.graph.nodes.forEach(function(node) {
           var left = Math.random() * 77,
            top = Math.random() * 54,
            html = '<div style=" left: ' + left + 'em; top: ' + top + 'em;"' +
@@ -46,12 +45,6 @@ angular.module('javascriptGraphLibrariesApp')
                   [1, 0.2, 1, 0, 0, 0, 'bar'],
                   [0.8, 1, 0, 1, 0, 0, 'baz'],
                   [0, 0.8, -1, 0, 0, 0, 'qux']
-              ],
-              targetAnchors = [
-                  [0.6, 0, 0, -1],
-                  [1, 0.6, 1, 0],
-                  [0.4, 1, 0, 1],
-                  [0, 0.4, -1, 0]
               ],
               exampleColor = '#00f',
                     connector = ['Bezier', {
@@ -135,10 +128,6 @@ angular.module('javascriptGraphLibrariesApp')
               instance.detach(conn);
             });
 
-            instance.bind('beforeDetach', function(conn) {
-              return confirm('Delete connection?');
-            });
-
             instance.draggable(divsWithWindowClass);
 
             jsPlumb.fire('jsPlumbDemoLoaded', instance);
@@ -146,5 +135,5 @@ angular.module('javascriptGraphLibrariesApp')
         });
 
       }
-
+      initializate();
     }]);

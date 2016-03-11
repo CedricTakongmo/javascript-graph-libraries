@@ -1,3 +1,4 @@
+/*globals angular*/
 'use strict';
 
 /**
@@ -8,7 +9,7 @@
  * Controller of the javascriptGraphLibrariesApp
  */
 angular.module('javascriptGraphLibrariesApp')
-  .controller('AboutCtrl', ['$scope', 'graphFactory', function($scope, graphFactory) {
+  .controller('AboutCtrl', ['$scope', 'graphFactory', function() {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

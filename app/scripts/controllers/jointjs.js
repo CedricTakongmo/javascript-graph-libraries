@@ -1,3 +1,4 @@
+/*globals $, angular, joint*/
 'use strict';
 
 /**
@@ -25,14 +26,14 @@ angular.module('javascriptGraphLibrariesApp')
           cfpLoadingBar.complete();
         }, 5000);
         var graph = new joint.dia.Graph(),
-                paper = new joint.dia.Paper({
+                currentNodes = {};
+        new joint.dia.Paper({
                   el: $('#jointjs-main'),
                   width: 1100,
                   height: 800,
                   gridSize: 1,
                   model: graph
-                }),
-                currentNodes = {};
+                });
         datain.graph.nodes.forEach(function(node) {
           var cell = new joint.shapes.fsa.State({
             position: {

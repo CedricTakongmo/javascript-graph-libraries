@@ -1,3 +1,4 @@
+/*globals window, document, angular, cytoscape*/
 'use strict';
 
 /**
@@ -9,8 +10,6 @@
  */
 angular.module('javascriptGraphLibrariesApp')
         .controller('cytoscapeCtrl', ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
-
-          initializate();
           function initializate() {
 
             graphFactory.getGraphs()
@@ -24,8 +23,8 @@ angular.module('javascriptGraphLibrariesApp')
             $timeout(function() {
               cfpLoadingBar.complete();
             }, 5000);
-            var graphClone = parseGraph(graph),
-                     cy = window.cy = cytoscape({
+            var graphClone = parseGraph(graph);
+            window.cy = cytoscape({
                        container: document.getElementById('cytoscape-main'),
                        boxSelectionEnabled: false,
                        autounselectify: true,
@@ -65,16 +64,16 @@ angular.module('javascriptGraphLibrariesApp')
                   source: element.source,
                   target: element.target
                 }
-              }
+              };
             });
             graphClone.graph.nodes = graph.graph.nodes.map(function(element) {
               return {
                 data: {
                   id: element.id
                 }
-              }
+              };
             });
             return graphClone;
           }
-
+          initializate();
         }]);

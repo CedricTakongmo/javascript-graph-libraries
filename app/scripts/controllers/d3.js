@@ -1,3 +1,4 @@
+/*globals window, angular, d3*/
 'use strict';
 
 /**
@@ -9,31 +10,30 @@
  */
 angular.module('javascriptGraphLibrariesApp')
     .controller('d3Ctrl', ['$scope', 'graphFactory', 'cfpLoadingBar', '$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
-        var hasViewChanged = false;
+      var hasViewChanged = false;
 
+      function initializate() {
 
-        function initializate() {
-
-            graphFactory.getGraphs()
-                .success(draw)
+        graphFactory.getGraphs()
+            .success(draw)
                 .error(function(error) {
-                    $scope.status = 'Unable to load customer data: ' + error.message;
+                  $scope.status = 'Unable to load customer data: ' + error.message;
                 });
-        }
+      }
 
-        function draw(graph) {
-            cfpLoadingBar.start();
-            $timeout(function() {
-                cfpLoadingBar.complete();
-            }, 5000);
-            var w = (window.innerWidth > 1000) ? 1000 : window.innerWidth - 50,
-                h = (window.innerHeight > 600) ? 600 : window.innerHeight - 50,
-                linkDistance = 200,
-                colors = d3.scale.category10(),
-                dataset = parseGraph(graph),
+      function draw(graph) {
+        cfpLoadingBar.start();
+        $timeout(function() {
+          cfpLoadingBar.complete();
+        }, 5000);
+        var w = (window.innerWidth > 1000) ? 1000 : window.innerWidth - 50,
+            h = (window.innerHeight > 600) ? 600 : window.innerHeight - 50,
+            linkDistance = 200,
+            colors = d3.scale.category10(),
+            dataset = parseGraph(graph),
                 svg = d3.select('#d3-main').append('svg').attr({
-                    width: w,
-                    height: h
+                  width: w,
+                  height: h
                 }),
                 force = d3.layout.force()
                 .nodes(dataset.nodes)
@@ -49,7 +49,7 @@ angular.module('javascriptGraphLibrariesApp')
                 .enter()
                 .append('line')
                 .attr('id', function(d, i) {
-                    return 'edge' + i
+                  return 'edge' + i;
                 })
                 .attr('marker-end', 'url(#arrowhead)')
                 .style('stroke', '#ccc')
@@ -59,10 +59,10 @@ angular.module('javascriptGraphLibrariesApp')
                 .enter()
                 .append('circle')
                 .attr({
-                    r: 5
+                  r: 5
                 })
                 .style('fill', function(d, i) {
-                    return colors(i);
+                  return colors(i);
                 })
                 .call(force.drag),
                 nodelabels = svg.selectAll('.nodelabel')
@@ -70,34 +70,34 @@ angular.module('javascriptGraphLibrariesApp')
                 .enter()
                 .append('text')
                 .attr({
-                    x: function(d) {
-                        return d.x;
-                    },
-                    y: function(d) {
-                        return d.y;
-                    },
-                    class: 'nodelabel',
-                    stroke: 'black'
+                  x: function(d) {
+                    return d.x;
+                  },
+                  y: function(d) {
+                    return d.y;
+                  },
+                  class: 'nodelabel',
+                  stroke: 'black'
                 })
                 .text(function(d) {
-                    return d.name;
+                  return d.name;
                 }),
                 edgepaths = svg.selectAll('.edgepath')
                 .data(dataset.edges)
                 .enter()
                 .append('path')
                 .attr({
-                    d: function(d) {
-                        return 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y
-                    },
-                    class: 'edgepath',
-                    'fill-opacity': 0,
-                    'stroke-opacity': 0,
-                    fill: 'blue',
-                    stroke: 'red',
-                    id: function(d, i) {
-                        return 'edgepath' + i
-                    }
+                  d: function(d) {
+                    return 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
+                  },
+                  class: 'edgepath',
+                  'fill-opacity': 0,
+                  'stroke-opacity': 0,
+                  fill: 'blue',
+                  stroke: 'red',
+                  id: function(d, i) {
+                    return 'edgepath' + i;
+                  }
                 })
                 .style('pointer-events', 'none'),
                 edgelabels = svg.selectAll('.edgelabel')
@@ -106,119 +106,121 @@ angular.module('javascriptGraphLibrariesApp')
                 .append('text')
                 .style('pointer-events', 'none')
                 .attr({
-                    class: 'edgelabel',
-                    id: function(d, i) {
-                        return 'edgelabel' + i
-                    },
-                    dx: 80,
-                    dy: 0,
-                    'font-size': 10,
-                    fill: '#aaa'
+                  class: 'edgelabel',
+                  id: function(d, i) {
+                    return 'edgelabel' + i;
+                  },
+                  dx: 80,
+                  dy: 0,
+                  'font-size': 10,
+                  fill: '#aaa'
                 });
 
-            edgelabels.append('textPath')
+        edgelabels.append('textPath')
                 .attr('xlink:href', function(d, i) {
-                    return '#edgepath' + i
+                  return '#edgepath' + i;
                 })
                 .style('pointer-events', 'none')
                 .text(function(d, i) {
-                    return 'label ' + i
+                  return 'label ' + i;
                 });
 
-            svg.append('defs').append('marker')
+        svg.append('defs').append('marker')
                 .attr({
-                    id: 'arrowhead',
-                    viewBox: '-0 -5 10 10',
-                    refX: 25,
-                    refY: 0,
-                    //'markerUnits':'strokeWidth',
-                    orient: 'auto',
-                    markerWidth: 10,
-                    markerHeight: 10,
-                    xoverflow: 'visible'
+                  id: 'arrowhead',
+                  viewBox: '-0 -5 10 10',
+                  refX: 25,
+                  refY: 0,
+                  //'markerUnits':'strokeWidth',
+                  orient: 'auto',
+                  markerWidth: 10,
+                  markerHeight: 10,
+                  xoverflow: 'visible'
                 })
                 .append('svg:path')
                 .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
                 .attr('fill', '#ccc')
                 .attr('stroke', '#ccc');
 
-            force.on('tick', function() {
+        force.on('tick', function() {
 
-                edges.attr({
-                    x1: function(d) {
-                        return d.source.x;
-                    },
-                    y1: function(d) {
-                        return d.source.y;
-                    },
-                    x2: function(d) {
-                        return d.target.x;
-                    },
-                    y2: function(d) {
-                        return d.target.y;
-                    }
-                });
+          edges.attr({
+            x1: function(d) {
+              return d.source.x;
+            },
+            y1: function(d) {
+              return d.source.y;
+            },
+            x2: function(d) {
+              return d.target.x;
+            },
+            y2: function(d) {
+              return d.target.y;
+            }
+          });
 
-                nodes.attr({
-                    cx: function(d) {
-                        return d.x;
-                    },
-                    cy: function(d) {
-                        return d.y;
-                    }
-                });
+          nodes.attr({
+            cx: function(d) {
+              return d.x;
+            },
+            cy: function(d) {
+              return d.y;
+            }
+          });
 
-                nodelabels.attr('x', function(d) {
-                        return d.x;
-                    })
+          nodelabels.attr('x', function(d) {
+            return d.x;
+          })
                     .attr('y', function(d) {
-                        return d.y;
+                      return d.y;
                     });
 
-                edgepaths.attr('d', function(d) {
-                    var path = 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
-                    return path;
-                });
+          edgepaths.attr('d', function(d) {
+            var path = 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
+            return path;
+          });
 
-                edgelabels.attr('transform', function(d, i) {
-                    if ((d.target.x < d.source.x) && !hasViewChanged) {
-                        var bbox = this.getBBox(),
-                            rx = bbox.x + bbox.width / 2,
-                            ry = bbox.y + bbox.height / 2;
-                        return 'rotate(180 ' + rx + ' ' + ry + ')';
-                    } else {
-                        return 'rotate(0)';
-                    }
-                });
-            });
-        }
-
-        function parseGraph(graph) {
-            var graphClone = angular.copy(graph);
-            graphClone.graph.edges = graph.graph.edges.map(function(element) {
-                return {
-                    source: arrayObjectIndexOf(graph.graph.nodes, element.source, 'id'),
-                    target: arrayObjectIndexOf(graph.graph.nodes, element.target, 'id')
-                }
-            });
-            graphClone.graph.nodes = graph.graph.nodes.map(function(element) {
-                return {
-                    name: element.id
-                }
-            });
-
-            return graphClone.graph;
-        }
-
-        function arrayObjectIndexOf(myArray, searchTerm, property) {
-            for (var i = 0; i < myArray.length; i++) {
-                if (myArray[i][property] === searchTerm) return i;
+          edgelabels.attr('transform', function(d) {
+            if ((d.target.x < d.source.x) && !hasViewChanged) {
+              var bbox = this.getBBox(),
+                  rx = bbox.x + bbox.width / 2,
+                  ry = bbox.y + bbox.height / 2;
+              return 'rotate(180 ' + rx + ' ' + ry + ')';
+            } else {
+              return 'rotate(0)';
             }
-            return -1;
-        }
-        $scope.$on('$routeChangeStart', function(next, current) {
-            hasViewChanged = true;
+          });
+        });
+      }
+
+      function parseGraph(graph) {
+        var graphClone = angular.copy(graph);
+        graphClone.graph.edges = graph.graph.edges.map(function(element) {
+          return {
+            source: arrayObjectIndexOf(graph.graph.nodes, element.source, 'id'),
+            target: arrayObjectIndexOf(graph.graph.nodes, element.target, 'id')
+          };
+        });
+        graphClone.graph.nodes = graph.graph.nodes.map(function(element) {
+          return {
+            name: element.id
+          };
         });
 
-        initializate();
+        return graphClone.graph;
+      }
+
+      function arrayObjectIndexOf(myArray, searchTerm, property) {
+        for (var i = 0; i < myArray.length; i++) {
+          if (myArray[i][property] === searchTerm) {
+            return i;
+          }
+        }
+        return -1;
+      }
+      $scope.$on('$routeChangeStart', function() {
+        hasViewChanged = true;
+      });
+
+      initializate();
     }]);

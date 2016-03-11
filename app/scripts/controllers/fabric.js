@@ -1,3 +1,4 @@
+/*globals window, angular, fabric*/
 'use strict';
 
 /**
@@ -60,7 +61,7 @@ angular.module('javascriptGraphLibrariesApp')
             canvas.setWidth(1100);
 
             data.graph.nodes.forEach(function(elem) {
-              nodeEdge[elem.id] = new Array();
+              nodeEdge[elem.id] = [];
             });
             data.graph.edges.forEach(function(elem) {
               var cell = makeLine([Math.random() * 1100, Math.random() * 800, Math.random() * 1100, Math.random() * 800]);
@@ -79,24 +80,27 @@ angular.module('javascriptGraphLibrariesApp')
 
             canvas.on('object:moving', function(e) {
               var p = e.target;
-              p.line1 && p.line1.set({
+              if (p.line1) {p.line1.set({
                 x2: p.left,
                 y2: p.top
               });
-              p.line2 && p.line2.set({
+              }
+              if (p.line2) {p.line2.set({
                 x1: p.left,
                 y1: p.top
               });
-              p.line3 && p.line3.set({
+              }
+              if (p.line3) {p.line3.set({
                 x1: p.left,
                 y1: p.top
               });
-              p.line4 && p.line4.set({
+              }
+              if (p.line4) {p.line4.set({
                 x1: p.left,
                 y1: p.top
-              });
+              });}
               canvas.renderAll();
             });
           }
-          initializate()
+          initializate();
         }]);

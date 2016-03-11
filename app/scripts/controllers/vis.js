@@ -1,3 +1,4 @@
+/*globals document, alert, angular, vis*/
 'use strict';
 
 /**
@@ -9,8 +10,6 @@
  */
 angular.module('javascriptGraphLibrariesApp')
     .controller('visCtrl',  ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
-      initializate();
-
       function initializate() {
 
         graphFactory.getGraphs()
@@ -24,7 +23,7 @@ angular.module('javascriptGraphLibrariesApp')
       // convenience method to stringify a JSON object
       $scope.toJSON = function toJSON(obj) {
         return JSON.stringify(obj, null, 4);
-      }
+      };
 
       $scope.addNode = function addNode() {
         try {
@@ -35,7 +34,7 @@ angular.module('javascriptGraphLibrariesApp')
         } catch (err) {
           alert(err);
         }
-      }
+      };
 
       $scope.updateNode = function updateNode() {
         try {
@@ -46,7 +45,7 @@ angular.module('javascriptGraphLibrariesApp')
         } catch (err) {
           alert(err);
         }
-      }
+      };
       $scope.removeNode = function removeNode() {
         try {
           nodes.remove({
@@ -55,7 +54,7 @@ angular.module('javascriptGraphLibrariesApp')
         } catch (err) {
           alert(err);
         }
-      }
+      };
 
       $scope.addEdge = function addEdge() {
         try {
@@ -68,7 +67,7 @@ angular.module('javascriptGraphLibrariesApp')
         } catch (err) {
           alert(err);
         }
-      }
+      };
       $scope.updateEdge = function updateEdge() {
         try {
           edges.update({
@@ -80,7 +79,7 @@ angular.module('javascriptGraphLibrariesApp')
         } catch (err) {
           alert(err);
         }
-      }
+      };
       $scope.removeEdge = function removeEdge() {
         try {
           edges.remove({
@@ -89,7 +88,7 @@ angular.module('javascriptGraphLibrariesApp')
         } catch (err) {
           alert(err);
         }
-      }
+      };
 
       function draw(datain) {
         cfpLoadingBar.start();
@@ -128,16 +127,16 @@ angular.module('javascriptGraphLibrariesApp')
             from: element.source,
             to: element.target,
             arrows: 'to'
-          }
+          };
         });
         graphClone.graph.nodes = graph.graph.nodes.map(function(element) {
           return {
             id: element.id,
             label: element.label
-          }
+          };
         });
 
         return graphClone.graph;
       }
-
+      initializate();
     }]);

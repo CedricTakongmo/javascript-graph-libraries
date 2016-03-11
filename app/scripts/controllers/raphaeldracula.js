@@ -1,3 +1,4 @@
+/*globals angular, Graph*/
 'use strict';
 
 /**
@@ -9,7 +10,6 @@
  */
 angular.module('javascriptGraphLibrariesApp')
         .controller('raphaeldraculaCtrl', ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
-          initializate();
 
           function initializate() {
 
@@ -50,5 +50,6 @@ angular.module('javascriptGraphLibrariesApp')
 
             renderer.draw();
           }
+          initializate();
 
         }]);

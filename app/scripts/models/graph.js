@@ -1,3 +1,4 @@
+/*globals angular*/
 'use strict';
 
 /**
@@ -28,7 +29,7 @@ angular.module('javascriptGraphLibrariesApp')
           };
 
           dataFactory.updateGraph = function(cust) {
-            return $http.put(urlBase + '/' + cust.ID, cust)
+            return $http.put(urlBase + '/' + cust.ID, cust);
           };
 
           dataFactory.deleteGraph = function(id) {
