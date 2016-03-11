@@ -1,0 +1,6 @@
+#loading-bar-spinner .spinner-icon {
+    border-color: #B91F1F transparent transparent #B91F1F;
+}
+#loading-bar .bar {
+    background: #B91F1F none repeat scroll 0 0;
+}
