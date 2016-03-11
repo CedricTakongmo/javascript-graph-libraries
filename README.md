@@ -1,4 +1,4 @@
-# Javascript-graph-libraries
+# Javascript Graph Libraries
 
 [![Build Status](https://travis-ci.org/CedricTakongmo/javascript-graph-libraries.svg?branch=master)](https://travis-ci.org/CedricTakongmo/javascript-graph-libraries)
 
