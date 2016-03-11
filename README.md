@@ -8,8 +8,8 @@
 </br>it will be normaly install with the npm package)
 
 2. Install all the global packages
-</br>npm install grunt-cli
-</br>npm install bower
+</br>`npm install grunt-cli`
+</br>`npm install bower`
 
 3. clone project and enter in the main directory
 </br>
