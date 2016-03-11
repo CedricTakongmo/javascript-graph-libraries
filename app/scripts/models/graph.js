@@ -11,10 +11,10 @@
 angular.module('javascriptGraphLibrariesApp')
         .factory('graphFactory', ['$http', function($http) {
 
-          //var urlBase = '../data/les_miserables.json',
-          var urlBase = '../data/points.json',
+          var urlBase = '../data/les_miserables.json';
+          //var urlBase = '../data/points.json',
 
-          dataFactory = {};
+          var dataFactory = {};
 
           dataFactory.getGraphs = function() {
             return $http.get(urlBase);
