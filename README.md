@@ -5,7 +5,7 @@
 ## Quickstart
 
 1. Install [**NodeJS**](https://nodejs.org/en/download/)
-</br>It will be normaly install with the npm package.
+</br>It will normaly install the npm package.
 
 2. Install all the global packages
 </br>`npm install grunt-cli`
