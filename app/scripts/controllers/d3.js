@@ -122,7 +122,7 @@ angular.module('javascriptGraphLibrariesApp')
                 })
                 .style('pointer-events', 'none')
                 .text(function(d, i) {
-                  return 'label ' + i;
+                  return d.source.name + '/' + d.target.name;
                 });
 
         svg.append('defs').append('marker')
