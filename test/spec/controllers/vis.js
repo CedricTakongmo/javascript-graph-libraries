@@ -152,7 +152,8 @@ describe('Controller: visCtrl', function () {
         var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL,
         httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS,
         exist;
-        httpBackend.expectGET(url).respond(200, httpResponse);
+        httpBackend.whenGET(JGL_KARMA_GLOBAL.MAIN_VIEW_URL).respond(200, '');
+		httpBackend.expectGET(url).respond(200, httpResponse);
         httpBackend.flush();
         exist = $("#network canvas").length;
         expect(exist).toBe(1);

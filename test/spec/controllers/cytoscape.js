@@ -46,6 +46,7 @@ describe('Controller: cytoscapeCtrl', function () {
     it('The jointjs-main div should not be empty', function () {
         var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL,
                 httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS;
+		httpBackend.whenGET(JGL_KARMA_GLOBAL.MAIN_VIEW_URL).respond(200, '');
         httpBackend.expectGET(url).respond(200, httpResponse);
         httpBackend.flush();
         var d3Html = $("#cytoscape-main").html();

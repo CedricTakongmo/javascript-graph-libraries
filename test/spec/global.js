@@ -31,3 +31,4 @@ JGL_KARMA_GLOBAL.DATA_POINTS = {
     }
 };
 JGL_KARMA_GLOBAL.DATA_POINTS_URL = '../data/points.json';
+JGL_KARMA_GLOBAL.MAIN_VIEW_URL = 'views/main.html';

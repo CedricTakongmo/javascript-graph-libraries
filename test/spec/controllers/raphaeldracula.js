@@ -39,7 +39,8 @@ describe('Controller: raphaeldraculaCtrl', function () {
         var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL,
         httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS,
         exist;
-        httpBackend.expectGET(url).respond(200, httpResponse);
+        httpBackend.whenGET(JGL_KARMA_GLOBAL.MAIN_VIEW_URL).respond(200, '');
+		httpBackend.expectGET(url).respond(200, httpResponse);
         httpBackend.flush();
         exist = $("#raphaeldracula-main svg").length;
         expect(exist).toBe(1);
