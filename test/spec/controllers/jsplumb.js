@@ -1,6 +1,5 @@
-/*globals describe, beforeEach, afterEach, inject, it, expect, setFixtures, JGL_KARMA_GLOBAL, $*/
 'use strict';
-
+/*
 describe('Controller: jsplumbCtrl', function () {
 
     // load the controller's module
@@ -49,3 +48,4 @@ describe('Controller: jsplumbCtrl', function () {
     });
 });
 
+*/
