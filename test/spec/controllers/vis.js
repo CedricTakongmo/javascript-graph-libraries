@@ -1,4 +1,4 @@
-/*globals describe, beforeEach, inject, it, expect*/
+/*globals describe, beforeEach, afterEach, inject, it, expect, setFixtures, JGL_KARMA_GLOBAL, $*/
 'use strict';
 
 describe('Controller: visCtrl', function () {
@@ -149,11 +149,12 @@ describe('Controller: visCtrl', function () {
     });
 
     it('The vis.js div #network should not be empty', function () {
-        var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL;
-        var httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS;
+        var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL,
+        httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS,
+        exist;
         httpBackend.expectGET(url).respond(200, httpResponse);
         httpBackend.flush();
-        var exist = $("#network canvas").length;
+        exist = $("#network canvas").length;
         expect(exist).toBe(1);
     });
 });

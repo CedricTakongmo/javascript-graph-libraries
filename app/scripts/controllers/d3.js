@@ -121,7 +121,7 @@ angular.module('javascriptGraphLibrariesApp')
                   return '#edgepath' + i;
                 })
                 .style('pointer-events', 'none')
-                .text(function(d, i) {
+                .text(function(d) {
                   return d.source.name + '/' + d.target.name;
                 });
 

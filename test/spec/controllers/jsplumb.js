@@ -1,4 +1,4 @@
-/*globals describe, beforeEach, inject, it, expect*/
+/*globals describe, beforeEach, afterEach, inject, it, expect, setFixtures, JGL_KARMA_GLOBAL, $*/
 'use strict';
 
 describe('Controller: jsplumbCtrl', function () {
@@ -40,8 +40,8 @@ describe('Controller: jsplumbCtrl', function () {
     });
 
     it('The jsPlumb div #jsplumb-main canvas should not be empty', function () {
-        var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL;
-        var httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS;
+        var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL,
+        httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS;
         httpBackend.expectGET(url).respond(200, httpResponse);
         httpBackend.flush();
         var existCanvas = $("#jsplumb-main #canvas").html();

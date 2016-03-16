@@ -1,4 +1,4 @@
-/*globals describe, beforeEach, inject, it, expect*/
+/*globals describe, beforeEach, afterEach, inject, it, expect, setFixtures, JGL_KARMA_GLOBAL, $*/
 'use strict';
 
 describe('Controller: raphaeldraculaCtrl', function () {
@@ -36,11 +36,12 @@ describe('Controller: raphaeldraculaCtrl', function () {
     });
 
     it('The dracula graph div #network should not be empty', function () {
-        var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL;
-        var httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS;
+        var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL,
+        httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS,
+        exist;
         httpBackend.expectGET(url).respond(200, httpResponse);
         httpBackend.flush();
-        var exist = $("#raphaeldracula-main svg").length;
+        exist = $("#raphaeldracula-main svg").length;
         expect(exist).toBe(1);
     });
 });
