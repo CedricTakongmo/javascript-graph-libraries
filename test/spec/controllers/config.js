@@ -1,4 +1,4 @@
-/*globals describe, beforeEach, afterEach, inject, it, expect, setFixtures, JGL_KARMA_GLOBAL*/
+/*globals describe, beforeEach, afterEach, inject, setFixtures*/
 'use strict';
 
 describe('Controller: ConfigCtrl', function () {
@@ -17,6 +17,7 @@ describe('Controller: ConfigCtrl', function () {
         scope = $rootScope.$new();
         settings = appSettings;
         httpBackend = $httpBackend;
+		translate = $translate;
         var page = "";
         page += "<div class=\"row\">";
         page += "    <div class=\"box\">";
