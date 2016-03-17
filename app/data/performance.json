@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Low",
+        "url": "../data/low.json"
+    }, {
+        "name": "Middle",
+        "url": "../data/middle.json"
+    }, {
+        "name": "High",
+        "url": "../data/high.json"
+    }
+]

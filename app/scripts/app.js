@@ -1,4 +1,4 @@
-/*globals angular*/
+/*globals angular, jglGetTranslations*/
 'use strict';
 
 /**
@@ -22,11 +22,17 @@ angular.module('javascriptGraphLibrariesApp', [
 ]).value('appSettings', {
   performance: {
     name: 'Middle',
-    url: '../data/middle.json'
+    url: '../data/middle.json',
+    options:{
+      url: '../data/performance.json'
+    }
+  },
+  language:{
+    url: '../data/language.json'
   }
 }).config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider) {
-  $translateProvider.translations('de_DE', jglGetTranslations().de_DE);
-  $translateProvider.translations('en_US', jglGetTranslations().en_US);
+  $translateProvider.translations('de_DE', jglGetTranslations().EN_US);
+  $translateProvider.translations('en_US', jglGetTranslations().EN_US);
   $translateProvider.preferredLanguage('de_DE');
   $routeProvider.when('/', {
     templateUrl: 'views/main.html',

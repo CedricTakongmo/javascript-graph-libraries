@@ -57,6 +57,7 @@ module.exports = function(config) {
       'bower_components/graphdracula/js/dracula_graffle.js',
       'bower_components/graphdracula/js/dracula_graph.js',
       'bower_components/graphdracula/js/dracula_algorithms.js',
+      "bower_components/ddslick/jquery.ddslick.min.js",
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
       "test/spec/**/*.js"
