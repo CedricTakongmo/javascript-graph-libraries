@@ -17,19 +17,22 @@ angular.module('javascriptGraphLibrariesApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngLoadingSpinner'
+    'ngLoadingSpinner',
+    'pascalprecht.translate'
 ]).value('appSettings', {
   performance: {
     name: 'Middle',
     url: '../data/middle.json'
   }
-}).config(['$routeProvider', function($routeProvider) {
-  $routeProvider
-                .when('/', {
-                  templateUrl: 'views/main.html',
-                  controller: 'MainCtrl',
-                  controllerAs: 'main'
-                })
+}).config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider) {
+  $translateProvider.translations('de_DE', jglGetTranslations().de_DE);
+  $translateProvider.translations('en_US', jglGetTranslations().en_US);
+  $translateProvider.preferredLanguage('de_DE');
+  $routeProvider.when('/', {
+    templateUrl: 'views/main.html',
+    controller: 'MainCtrl',
+    controllerAs: 'main'
+  })
                 .when('/about', {
                   templateUrl: 'views/about.html',
                   controller: 'AboutCtrl',
