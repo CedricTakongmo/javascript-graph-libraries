@@ -30,36 +30,36 @@ JGL_KARMA_GLOBAL.DATA_POINTS = {
             }]
     }
 };
-JGL_KARMA_GLOBAL.DATA_POINTS_URL = '../data/middle.json';
-JGL_KARMA_GLOBAL.DATA_LANGUAGE_URL = '../data/language.json';
+JGL_KARMA_GLOBAL.DATA_POINTS_URL = 'data/middle.json';
+JGL_KARMA_GLOBAL.DATA_LANGUAGE_URL = 'data/language.json';
 JGL_KARMA_GLOBAL.DATA_LANGUAGE = [
         {
             "text": "Deutsch",
             "value": "de_DE",
             "description": "Deutsche Sprache",
-            "imageSrc": "../images/de_flag.png"
+            "imageSrc": "images/de_flag.png"
 
         },
         {
             "text": "english",
             "value": "en_US",
             "description": "English language",
-            "imageSrc": "../images/uk_flag.png"
+            "imageSrc": "images/uk_flag.png"
 
         }
 
     ];
-JGL_KARMA_GLOBAL.DATA_PERFORMANCE_URL = '../data/performance.json';
+JGL_KARMA_GLOBAL.DATA_PERFORMANCE_URL = 'data/performance.json';
 JGL_KARMA_GLOBAL.DATA_PERFORMANCE =  [
         {
             "name": "Low",
-            "url": "../data/low.json"
+            "url": "data/low.json"
         }, {
             "name": "Middle",
-            "url": "../data/middle.json"
+            "url": "data/middle.json"
         }, {
             "name": "High",
-            "url": "../data/high.json"
+            "url": "data/high.json"
         }
     ];
 JGL_KARMA_GLOBAL.MAIN_VIEW_URL = 'views/main.html';

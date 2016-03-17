@@ -22,13 +22,13 @@ angular.module('javascriptGraphLibrariesApp', [
 ]).value('appSettings', {
   performance: {
     name: 'Middle',
-    url: '../data/middle.json',
+    url: 'data/middle.json',
     options:{
-      url: '../data/performance.json'
+      url: 'data/performance.json'
     }
   },
   language:{
-    url: '../data/language.json'
+    url: 'data/language.json'
   }
 }).config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider) {
   $translateProvider.translations('de_DE', jglGetTranslations().DE_DE);

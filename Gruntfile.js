@@ -205,7 +205,9 @@ module.exports = function(grunt) {
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/styles/fonts/*'
+            '<%= yeoman.dist %>/styles/fonts/*',
+			'!<%= yeoman.dist %>/images/uk_flag.png',
+			'!<%= yeoman.dist %>/images/de_flag.png'
         ]
       }
     },

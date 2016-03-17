@@ -1,12 +1,21 @@
 [
     {
         "name": "Low",
-        "url": "../data/low.json"
+        "url": "data/low.json",
+		"options": {
+		  "url": "data/performance.json"
+		}
     }, {
         "name": "Middle",
-        "url": "../data/middle.json"
+        "url": "data/middle.json",
+		"options": {
+		  "url": "data/performance.json"
+		}
     }, {
         "name": "High",
-        "url": "../data/high.json"
+        "url": "data/high.json",
+		"options": {
+		  "url": "data/performance.json"
+		}
     }
 ]

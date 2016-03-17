@@ -3,14 +3,14 @@
         "text": "Deutsch",
         "value": "de_DE",
         "description": "Deutsche Sprache",
-        "imageSrc": "../images/de_flag.png"
+        "imageSrc": "images/de_flag.png"
 
     },
     {
         "text": "english",
         "value": "en_US",
         "description": "English language",
-        "imageSrc": "../images/uk_flag.png"
+        "imageSrc": "images/uk_flag.png"
 
     }
 
