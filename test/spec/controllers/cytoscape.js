@@ -49,7 +49,7 @@ describe('Controller: cytoscapeCtrl', function () {
 		httpBackend.whenGET(JGL_KARMA_GLOBAL.MAIN_VIEW_URL).respond(200, '');
         httpBackend.expectGET(url).respond(200, httpResponse);
         httpBackend.flush();
-        var d3Html = $("#cytoscape-main").html();
-        expect(d3Html !== "").toBe(true);
+        var cytoscapeHtml = $("#cytoscape-main").html();
+        expect(cytoscapeHtml !== "").toBe(true);
     });
 });

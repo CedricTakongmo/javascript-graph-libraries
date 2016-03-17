@@ -9,7 +9,7 @@
  * Controller of the javascriptGraphLibrariesApp
  */
 angular.module('javascriptGraphLibrariesApp')
-  .controller('MainCtrl', ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
+  .controller('MainCtrl', ['cfpLoadingBar','$timeout', function(cfpLoadingBar, $timeout) {
     cfpLoadingBar.start();
     $timeout(function() {
       cfpLoadingBar.complete();

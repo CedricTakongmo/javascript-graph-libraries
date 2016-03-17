@@ -9,34 +9,36 @@
  * Factory of the javascriptGraphLibrariesApp
  */
 angular.module('javascriptGraphLibrariesApp')
-        .factory('graphFactory', ['$http', function($http) {
+        .factory('graphFactory', ['$http', 'appSettings', function($http, appSettings) {
 
-          //var urlBase = '../data/les_miserables.json',
-          var urlBase = '../data/points.json',
-          dataFactory = {};
+          var dataFactory = {};
+
+          function getBaseUrl() {
+            return appSettings.performance.url;
+          }
 
           dataFactory.getGraphs = function() {
-            return $http.get(urlBase);
+            return $http.get(getBaseUrl());
           };
 
           dataFactory.getGraph = function(id) {
-            return $http.get(urlBase + '/' + id);
+            return $http.get(getBaseUrl() + '/' + id);
           };
 
           dataFactory.insertGraph = function(cust) {
-            return $http.post(urlBase, cust);
+            return $http.post(getBaseUrl(), cust);
           };
 
           dataFactory.updateGraph = function(cust) {
-            return $http.put(urlBase + '/' + cust.ID, cust);
+            return $http.put(getBaseUrl() + '/' + cust.ID, cust);
           };
 
           dataFactory.deleteGraph = function(id) {
-            return $http.delete(urlBase + '/' + id);
+            return $http.delete(getBaseUrl() + '/' + id);
           };
 
           dataFactory.getOrders = function(id) {
-            return $http.get(urlBase + '/' + id + '/orders');
+            return $http.get(getBaseUrl() + '/' + id + '/orders');
           };
 
           return dataFactory;

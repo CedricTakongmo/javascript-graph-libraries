@@ -48,9 +48,9 @@ module.exports = function(config) {
       'bower_components/cytoscape/dist/cytoscape.js',
       'bower_components/cytoscape-dagre/cytoscape-dagre.js',
       'bower_components/jsPlumb/dist/js/jsPlumb-2.0.7.js',
+      'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/jasmine/lib/jasmine-core/jasmine.js',
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-      'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'bower_components/graphdracula/js/raphael-min.js',
       'bower_components/graphdracula/js/dracula_graffle.js',
