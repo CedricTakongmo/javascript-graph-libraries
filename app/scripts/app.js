@@ -20,8 +20,8 @@ angular.module('javascriptGraphLibrariesApp', [
     'ngLoadingSpinner'
 ]).value('appSettings', {
   performance: {
-    name: 'Low',
-    url: '../data/low.json'
+    name: 'Middle',
+    url: '../data/middle.json'
   }
 }).config(['$routeProvider', function($routeProvider) {
   $routeProvider

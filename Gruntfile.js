@@ -458,7 +458,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
       'build',
-	  'test',
-	  'newer:jshint'
+      'test',
+      'newer:jshint'
   ]);
 };
