@@ -31,7 +31,7 @@ angular.module('javascriptGraphLibrariesApp', [
     url: '../data/language.json'
   }
 }).config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider) {
-  $translateProvider.translations('de_DE', jglGetTranslations().EN_US);
+  $translateProvider.translations('de_DE', jglGetTranslations().DE_DE);
   $translateProvider.translations('en_US', jglGetTranslations().EN_US);
   $translateProvider.preferredLanguage('de_DE');
   $routeProvider.when('/', {

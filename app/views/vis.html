@@ -39,61 +39,61 @@
         <div class="col-lg-12 vis-main">
             <span us-spinner="{radius:30, width:8, length: 16}"></span>
             <p>
-                This example demonstrates dynamically adding, updating and removing nodes and edges using a DataSet.
+               {{ 'VIS_HEADLINE' | translate }}
             </p>
 
-            <h1>Adjust</h1>
+            <h1> {{ 'VIS_ADJUST' | translate }}</h1>
             <table>
                 <tr>
                     <td>
-                        <h2>Node</h2>
+                        <h2>{{ 'VIS_NODE' | translate }}</h2>
                         <table>
                             <tr>
                                 <td></td>
-                                <td><label for="node-id">Id</label></td>
+                                <td><label for="node-id">{{ 'VIS_NODE_ID' | translate }}</label></td>
                                 <td><input id="node-id" class="form-control" type="text" value="6"></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><label for="node-label">Label</label></td>
+                                <td><label for="node-label">{{ 'VIS_NODE_LABEL' | translate }}</label></td>
                                 <td><input id="node-label" class="form-control" type="text" value="Node 6"></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>Action</td>
+                                <td><label>{{ 'VIS_NODE_ACTION' | translate }}</label></td>
                                 <td>
-                                    <button id="node-add" class="btn btn-primary" ng-click="addNode();">Add</button>
-                                    <button id="node-update" class="btn btn-primary" ng-click="updateNode();">Update</button>
-                                    <button id="node-remove" class="btn btn-primary" ng-click="removeNode();">Remove</button>
+                                    <button id="node-add" class="btn btn-primary" ng-click="addNode();">{{ 'VIS_NODE_ADD' | translate }}</button>
+                                    <button id="node-update" class="btn btn-primary" ng-click="updateNode();">{{ 'VIS_NODE_UPDATE' | translate }}</button>
+                                    <button id="node-remove" class="btn btn-primary" ng-click="removeNode();">{{ 'VIS_NODE_REMOVE' | translate }}</button>
                                 </td>
                             </tr>
                         </table>
                     </td>
                     <td>
-                        <h2>Edge</h2>
+                        <h2>{{ 'VIS_EDGE' | translate }}</h2>
                         <table>
                             <tr>
                                 <td></td>
-                                <td><label for="edge-id">Id</label></td>
+                                <td><label for="edge-id">{{ 'VIS_EDGE_ID' | translate }}</label></td>
                                 <td><input id="edge-id" class="form-control" type="text" value="5"></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><label for="edge-from">From</label></td>
+                                <td><label for="edge-from">{{ 'VIS_EDGE_FROM' | translate }}</label></td>
                                 <td><input id="edge-from" class="form-control" type="text" value="3"></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><label for="edge-to">To</label></td>
+                                <td><label for="edge-to">{{ 'VIS_EDGE_TO' | translate }}</label></td>
                                 <td><input id="edge-to" class="form-control" type="text" value="4"></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>Action</td>
+                                <td><label>{{ 'VIS_EDGE_ACTION' | translate }}</label></td>
                                 <td>
-                                    <button id="edge-add" class="btn btn-primary" ng-click="addEdge();">Add</button>
-                                    <button id="edge-update" class="btn btn-primary" ng-click="updateEdge();">Update</button>
-                                    <button id="edge-remove" class="btn btn-primary" ng-click="removeEdge();">Remove</button>
+                                    <button id="edge-add" class="btn btn-primary" ng-click="addEdge();">{{ 'VIS_EDGE_ADD' | translate }}</button>
+                                    <button id="edge-update" class="btn btn-primary" ng-click="updateEdge();">{{ 'VIS_EDGE_UPDATE' | translate }}</button>
+                                    <button id="edge-remove" class="btn btn-primary" ng-click="removeEdge();">{{ 'VIS_EDGE_REMOVE' | translate }}</button>
                                 </td>
                             </tr>
                         </table>
@@ -102,7 +102,7 @@
 
             </table>
 
-            <h1>View</h1>
+            <h1>{{ 'VIS_VIEW' | translate }}</h1>
             <table class="view">
                 <colgroup>
                     <col width="25%">
@@ -111,18 +111,17 @@
                 </colgroup>
                 <tr>
                     <td>
-                        <h2>Nodes</h2>
+                        <h2>{{ 'VIS_VIEW_NODE' | translate }}</h2>
                         <pre id="nodes"></pre>
                     </td>
 
                     <td>
-                        <h2>Edges</h2>
+                        <h2>{{ 'VIS_VIEW_EDGES' | translate }}</h2>
                         <pre id="edges"></pre>
                     </td>
 
                     <td>
-                        <h2>Network</h2>
-
+                        <h2>{{ 'VIS_VIEW_NETWORK' | translate }}</h2>
                         <div id="network"></div>
                     </td>
                 </tr>
