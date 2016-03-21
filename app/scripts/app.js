@@ -83,6 +83,10 @@ angular.module('javascriptGraphLibrariesApp', [
                   templateUrl: 'views/config.html',
                   controller: 'ConfigCtrl'
                 })
+                .when('/ganttcharthyperlibrary', {
+                  templateUrl: 'views/ganttcharthyperlibrary.html',
+                  controller: 'ganttcharthyperlibraryCtrl'
+                })
                 .otherwise({
                   redirectTo: '/'
                 });

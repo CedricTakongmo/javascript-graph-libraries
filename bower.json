@@ -23,7 +23,8 @@
     "cytoscape-dagre": "1.1.2",
     "graphdracula": "v0.0.3alpha5",
     "jsPlumb": "2.0.7",
-    "ddslick": "*"
+    "ddslick": "*",
+    "GanttChartHyperLibrary": "http://DlhSoft.com/Packages/GanttChartHyperLibrary.zip"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0",
