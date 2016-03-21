@@ -12,11 +12,11 @@ angular.module(
         'ConfigCtrl',
         ['$scope', 'appSettings', '$translate', 'performanceFactory', 'languageFactory', function($scope, appSettings, $translate, performanceFactory, languageFactory) {
           $scope.onLanguageChanged = function(ddslickData) {
-                $translate.use(ddslickData.selectedData.value).then(function(key) {
-				  console.log('Sprache zu ' + key + ' gewechselt.');
-				}, function() {
-				  console.log('Irgendwas lief schief.');
-				});
+            $translate.use(ddslickData.selectedData.value).then(function(key) {
+              console.log('Sprache zu ' + key + ' gewechselt.');
+            }, function() {
+              console.log('Irgendwas lief schief.');
+            });
           };
           $scope.perfSetDataSource = function(opt) {
             $scope.perfSetting = appSettings.performance = opt;
