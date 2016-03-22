@@ -1,3 +1,4 @@
+/*globals document, angular, alert, DlhSoft, toggleDependencyConstraintsCommand, toggleBaselineCommand, highlightCriticalPathCommand*/
 'use strict';
 /**
  * @ngdoc function
@@ -143,21 +144,22 @@ angular.module(
           }, {
             item: items[5]
           }];
-          for (i = 4; i <= 32; i++)
-                items.push({
-                  content: 'Task ' +
-                          i,
-                  start: new Date(
-                          year,
-                          month,
-                          2, 8, 0,
-                          0),
-                  finish: new Date(
-                          year,
-                          month,
-                          4, 16,
-                          0, 0)
-                });
+          for (i = 4; i <= 32; i++) {
+            items.push({
+              content: 'Task ' +
+                      i,
+              start: new Date(
+                      year,
+                      month,
+                      2, 8, 0,
+                      0),
+              finish: new Date(
+                      year,
+                      month,
+                      4, 16,
+                      0, 0)
+            });
+          }
           // Prepare control settings.
           settings = {
             // Optionally, hide data grid or set grid and chart widths, set read only settings, and/or disable virtualization.
@@ -466,8 +468,9 @@ angular.module(
 
           function insertNewItem() {
             if (ganttChartView.selectedItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             var item = {
               content: 'New task',
               start: new Date(
@@ -497,8 +500,9 @@ angular.module(
           function increaseItemIndentation() {
             var item =
                     ganttChartView.selectedItem;
-            if (item == null)
-                return;
+            if (item == null) {
+              return;
+            }
             ganttChartView.increaseItemIndentation(
                     item);
             ganttChartView.scrollToItem(
@@ -509,8 +513,9 @@ angular.module(
           function decreaseItemIndentation() {
             var item =
                     ganttChartView.selectedItem;
-            if (item == null)
-                return;
+            if (item == null) {
+              return;
+            }
             ganttChartView.decreaseItemIndentation(
                     item);
             ganttChartView.scrollToItem(
@@ -520,8 +525,9 @@ angular.module(
 
           function deleteItem() {
             if (ganttChartView.selectedItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             ganttChartView.removeItem(
                     ganttChartView.selectedItem,
                     true); // Also remove successors' predecessor information.
@@ -530,8 +536,9 @@ angular.module(
 
           function setCustomBarColorToItem() {
             if (ganttChartView.selectedItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             var item =
                     ganttChartView.selectedItem;
             item.barStyle =
@@ -543,8 +550,9 @@ angular.module(
 
           function copyItem() {
             if (ganttChartView.selectedItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             copiedItem =
                     ganttChartView.selectedItem;
           }
@@ -553,8 +561,9 @@ angular.module(
           function pasteItem() {
             if (copiedItem == null ||
                     ganttChartView.selectedItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             var item = {
               content: copiedItem
                       .content,
@@ -586,8 +595,9 @@ angular.module(
 
           function moveItemUp() {
             if (ganttChartView.selectedItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             var item =
                     ganttChartView.selectedItem;
             ganttChartView.moveItemHierarchyUp(
@@ -599,8 +609,9 @@ angular.module(
 
           function moveItemDown() {
             if (ganttChartView.selectedItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             var item =
                     ganttChartView.selectedItem;
             ganttChartView.moveItemHierarchyDown(
@@ -706,20 +717,21 @@ angular.module(
             highlightCriticalPathCommand
                     .className =
                     'ribbonCommand toggle pressed';
-            var item,i;
+            var item, i;
             for (i = 0; i <
                     ganttChartView.items
                     .length; i++) {
               item =
-                     ganttChartView.items[
-                             i];
+                      ganttChartView.items[
+                              i];
               delete item.barStyle;
               if (!item.hasChildren &&
                       ganttChartView.isItemCritical(
-                              item))
-                  item
-                          .barStyle =
-                          'stroke: Red; fill: Red';
+                              item)) {
+                item
+                        .barStyle =
+                        'stroke: Red; fill: Red';
+              }
               ganttChartView.refreshChartItem(
                       item);
             }
@@ -727,8 +739,9 @@ angular.module(
 
           function splitRemainingWork() {
             if (ganttChartView.selectedItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             var remainingWorkItem =
                     ganttChartView.splitRemainingWork(
                             ganttChartView.selectedItem,
@@ -736,8 +749,9 @@ angular.module(
                             ' (compl. work)'
                             );
             if (remainingWorkItem ==
-                    null)
-                return;
+                    null) {
+              return;
+            }
             ganttChartView.scrollToItem(
                     remainingWorkItem
                     );
@@ -805,7 +819,7 @@ angular.module(
                                           'ScheduleChart',
                                           displayedTime
                                           );
-                        }
+                        };
             scheduleChartSettings.splitterPositionChangeHandler =
                         function(gridWidth,
                                 chartWidth) {
@@ -815,7 +829,7 @@ angular.module(
                                           gridWidth,
                                           chartWidth
                                           );
-                        }
+                        };
           }
 
           function closeScheduleChartView() {
@@ -861,7 +875,7 @@ angular.module(
                                           'LoadChart',
                                           displayedTime
                                           );
-                        }
+                        };
             loadChartSettings.splitterPositionChangeHandler =
                         function(gridWidth,
                                 chartWidth) {
@@ -871,7 +885,7 @@ angular.module(
                                           gridWidth,
                                           chartWidth
                                           );
-                        }
+                        };
             refreshLoadChartResourceSelector
                     ();
           }
@@ -920,7 +934,7 @@ angular.module(
                     criticalItems.length; i++
                     ) {
               item =
-                     criticalItems[i];
+                      criticalItems[i];
               item.shapeStyle =
                       'stroke: Red; fill: White';
               pertChartView.refreshItem(
@@ -944,26 +958,26 @@ angular.module(
                     document.querySelector(
                             '#networkDiagramPanel'
                             ), networkDiagramItems,
-                            networkDiagramSettings,
-                            networkDiagramView,
-                            criticalItems,
-                            item,
-                            i;
+                    networkDiagramSettings,
+                    networkDiagramView,
+                    criticalItems,
+                    item,
+                    i;
             networkDiagramPanel.style
                     .display =
                     'inherit';
             // Optionally, pass 0 as method parameter to generate a lighter diagram for root tasks only.
             networkDiagramItems =
-                   ganttChartView.getNetworkDiagramItems();
+                    ganttChartView.getNetworkDiagramItems();
 
             networkDiagramSettings = {
-                          diagramMargin: 2,
-                          snapRearrangedItemsToGuidelines: false
-                        };
+              diagramMargin: 2,
+              snapRearrangedItemsToGuidelines: false
+            };
             networkDiagramView =
-                   document.querySelector(
-                           '#networkDiagramView'
-                           );
+                    document.querySelector(
+                            '#networkDiagramView'
+                            );
             DlhSoft.Controls.Pert.NetworkDiagramView
                     .initialize(
                             networkDiagramView,
@@ -971,12 +985,12 @@ angular.module(
                             networkDiagramSettings
                             );
             criticalItems =
-                   networkDiagramView.getCriticalItems();
+                    networkDiagramView.getCriticalItems();
             for (i = 0; i <
                     criticalItems.length; i++
                     ) {
               item =
-                     criticalItems[i];
+                      criticalItems[i];
               item.shapeStyle =
                       'stroke: Red; fill: White';
               networkDiagramView.refreshItem(
@@ -1039,9 +1053,9 @@ angular.module(
                     .display =
                     'inherit';
             loadProjectXmlInput =
-                   document.querySelector(
-                           '#loadProjectXmlInput'
-                           );
+                    document.querySelector(
+                            '#loadProjectXmlInput'
+                            );
             loadProjectXmlInput.focus();
             loadProjectXmlInput.select();
           }
@@ -1051,7 +1065,7 @@ angular.module(
                     DlhSoft.Controls.GanttChartView
                     .ProjectSerializer.initialize(
                             ganttChartView),
-                            loadProjectXmlInput =
+                    loadProjectXmlInput =
                     document.querySelector(
                             '#loadProjectXmlInput'
                             );
@@ -1075,7 +1089,7 @@ angular.module(
             var saveProjectXmlPanel =
                     document.querySelector(
                             '#saveProjectXmlPanel'
-                            ), projectXmlSerializerSettings, projectSerializer, saveProjectXmlInput;
+                            ), projectXmlSerializerSettings, projectSerializer, saveProjectXmlInput, saveProjectXmlOutput;
             saveProjectXmlPanel.style
                     .display =
                     'inherit';
@@ -1093,6 +1107,10 @@ angular.module(
             saveProjectXmlInput =
                     document.querySelector(
                             '#saveProjectXmlInput'
+                            );
+            saveProjectXmlOutput =
+                    document.querySelector(
+                            '#saveProjectXmlOutput'
                             );
             saveProjectXmlOutput.value =
                     projectSerializer.getXml();
@@ -1149,31 +1167,25 @@ angular.module(
                               isFinal && ((!
                                       item.hasChildren &&
                                       (
-                                              propertyName ==
-                                              'content' ||
-                                              propertyName ==
-                                              'start' ||
-                                              propertyName ==
-                                              'finish' ||
-                                              propertyName ==
-                                              'completedFinish' ||
-                                              propertyName ==
-                                              'isMilestone' ||
-                                              propertyName ==
-                                              'assignmentsContent'
-                                              )) ||
-                                      propertyName ==
-                                      'indentation'
-                                      ))
-                          refreshOtherViews();
+                                              propertyName === 'content' ||
+                                              propertyName === 'start' ||
+                                              propertyName === 'finish' ||
+                                              propertyName === 'completedFinish' ||
+                                              propertyName === 'isMilestone' ||
+                                              propertyName === 'assignmentsContent'
+                                              )) || propertyName === 'indentation'
+                                      )) {
+                        refreshOtherViews();
+                      }
                       if (typeof originalItemPropertyChangeHandler !==
-                              'undefined')
-                          originalItemPropertyChangeHandler(
-                                  item,
-                                  propertyName,
-                                  isDirect,
-                                  isFinal);
-                    }
+                              'undefined') {
+                        originalItemPropertyChangeHandler(
+                                item,
+                                propertyName,
+                                isDirect,
+                                isFinal);
+                      }
+                    };
           settings.displayedTimeChangeHandler =
                     function(displayedTime) {
                       refreshViewsDisplayedTime
@@ -1190,7 +1202,7 @@ angular.module(
                                       chartWidth);
                     };
           settings.hourWidthChangeHandler =
-                    function(hourWidth) {
+                    function() {
                       refreshOtherViews();
                     };
 
@@ -1208,17 +1220,18 @@ angular.module(
           }
 
           function refreshScheduleChartView() {
+            var scheduleChartPanel =
+                    document.querySelector(
+                            '#scheduleChartPanel'
+                            );
             if (scheduleChartPanel.style
-                    .display != 'none' &&
+                    .display !== 'none' &&
                     !
                     isWaitingToRefreshScheduleChartView
                     ) {
-              isWaitingToRefreshScheduleChartView
-                      = true;
+              isWaitingToRefreshScheduleChartView = true;
               setTimeout(function() {
-                isWaitingToRefreshScheduleChartView
-                        =
-                        false;
+                isWaitingToRefreshScheduleChartView = false;
                 var
                         scheduleChartView =
                         document
@@ -1246,18 +1259,16 @@ angular.module(
                     document.querySelector(
                             '#loadChartResourceFilter'
                             ),
-                    i, resources, resource, option
-            previouslySelectedResource =
+                    i, resources, resource, option,
+                    previouslySelectedResource =
                     loadChartResourceFilter
                     .value;
-            for (i =
-                    loadChartResourceFilter
-                    .childNodes.length; i--
-                    > 2;)
-                loadChartResourceFilter
-                        .removeChild(
-                                loadChartResourceFilter
-                                .childNodes[i]);
+            for (i = loadChartResourceFilter.childNodes.length; i-- > 2;) {
+              loadChartResourceFilter
+                      .removeChild(
+                              loadChartResourceFilter
+                              .childNodes[i]);
+            }
             resources =
                     ganttChartView.getAssignedResources();
             for (i = 0; i <
@@ -1272,12 +1283,11 @@ angular.module(
                       document.createTextNode(
                               resource
                               ));
-              if (resource ==
-                      previouslySelectedResource
-                      )
-                  option.setAttribute(
-                          'selected',
-                          'true');
+              if (resource === previouslySelectedResource) {
+                option.setAttribute(
+                        'selected',
+                        'true');
+              }
               loadChartResourceFilter
                       .appendChild(
                               option);
@@ -1289,13 +1299,16 @@ angular.module(
           }
 
           function refreshLoadChartView() {
+            var loadChartPanel =
+                    document.querySelector(
+                            '#loadChartPanel'
+                            );
             if (loadChartPanel.style
-                    .display != 'none' &&
+                    .display !== 'none' &&
                     !
                     isWaitingToRefreshLoadChartView
                     ) {
-              isWaitingToRefreshLoadChartView
-                      = true;
+              isWaitingToRefreshLoadChartView = true;
               setTimeout(function() {
                 var
                         loadChartView =
@@ -1312,8 +1325,7 @@ angular.module(
                         loadChartResourceFilter
                         .value;
                 if (
-                        resourceFilterValue ==
-                        '') {
+                        resourceFilterValue === '') {
                   loadChartView
                           .loadChartItems =
                           ganttChartView
@@ -1351,9 +1363,7 @@ angular.module(
                                 );
                 loadChartView
                         .refresh();
-                isWaitingToRefreshLoadChartView
-                        =
-                        false;
+                isWaitingToRefreshLoadChartView = false;
               }, 0);
             }
           }
@@ -1361,15 +1371,20 @@ angular.module(
           function refreshViewsDisplayedTime(
                   sourceControlType,
                   displayedTime) {
-            if (sourceControlType !=
-                    'ScheduleChart' &&
+            var loadChartPanel =
+                    document.querySelector(
+                            '#loadChartPanel'
+                            ), scheduleChartPanel =
+                    document.querySelector(
+                            '#scheduleChartPanel'
+                            );
+            if (sourceControlType !== 'ScheduleChart' &&
                     scheduleChartPanel.style
-                    .display != 'none' &&
+                    .display !== 'none' &&
                     !
                     isWaitingToRefreshScheduleChartViewDisplayedTime
                     ) {
-              isWaitingToRefreshScheduleChartViewDisplayedTime
-                      = true;
+              isWaitingToRefreshScheduleChartViewDisplayedTime = true;
               setTimeout(function() {
                 var
                         scheduleChartView =
@@ -1381,20 +1396,16 @@ angular.module(
                         .scrollToDateTime(
                                 displayedTime
                                 );
-                isWaitingToRefreshScheduleChartViewDisplayedTime
-                        =
-                        false;
+                isWaitingToRefreshScheduleChartViewDisplayedTime = false;
               }, 0);
             }
-            if (sourceControlType !=
-                    'LoadChart' &&
+            if (sourceControlType !== 'LoadChart' &&
                     loadChartPanel.style
-                    .display != 'none' &&
+                    .display !== 'none' &&
                     !
                     isWaitingToRefreshLoadChartViewDisplayedTime
                     ) {
-              isWaitingToRefreshLoadChartViewDisplayedTime
-                      = true;
+              isWaitingToRefreshLoadChartViewDisplayedTime = true;
               setTimeout(function() {
                 var
                         loadChartView =
@@ -1406,25 +1417,19 @@ angular.module(
                         .scrollToDateTime(
                                 displayedTime
                                 );
-                isWaitingToRefreshLoadChartViewDisplayedTime
-                        =
-                        false;
+                isWaitingToRefreshLoadChartViewDisplayedTime = false;
               }, 0);
             }
-            if (sourceControlType !=
-                    'GanttChart' && !
+            if (sourceControlType !== 'GanttChart' && !
                     isWaitingToRefreshGanttChartViewDisplayedTime
                     ) {
-              isWaitingToRefreshGanttChartViewDisplayedTime
-                      = true;
+              isWaitingToRefreshGanttChartViewDisplayedTime = true;
               setTimeout(function() {
                 ganttChartView
                         .scrollToDateTime(
                                 displayedTime
                                 );
-                isWaitingToRefreshGanttChartViewDisplayedTime
-                        =
-                        false;
+                isWaitingToRefreshGanttChartViewDisplayedTime = false;
               }, 0);
             }
           }
@@ -1432,15 +1437,20 @@ angular.module(
           function refreshViewsSplitterPosition(
                   sourceControlType,
                   gridWidth, chartWidth) {
-            if (sourceControlType !=
-                    'ScheduleChart' &&
+            var loadChartPanel =
+                    document.querySelector(
+                            '#loadChartPanel'
+                            ), scheduleChartPanel =
+                    document.querySelector(
+                            '#scheduleChartPanel'
+                            );
+            if (sourceControlType !== 'ScheduleChart' &&
                     scheduleChartPanel.style
-                    .display != 'none' &&
+                    .display !== 'none' &&
                     !
                     isWaitingToRefreshScheduleChartViewSplitterPosition
                     ) {
-              isWaitingToRefreshScheduleChartViewSplitterPosition
-                      = true;
+              isWaitingToRefreshScheduleChartViewSplitterPosition = true;
               setTimeout(function() {
                 var
                         scheduleChartView =
@@ -1453,20 +1463,16 @@ angular.module(
                                 gridWidth,
                                 chartWidth
                                 );
-                isWaitingToRefreshScheduleChartViewSplitterPosition
-                        =
-                        false;
+                isWaitingToRefreshScheduleChartViewSplitterPosition = false;
               }, 0);
             }
-            if (sourceControlType !=
-                    'LoadChart' &&
+            if (sourceControlType !== 'LoadChart' &&
                     loadChartPanel.style
-                    .display != 'none' &&
+                    .display !== 'none' &&
                     !
                     isWaitingToRefreshLoadChartViewSplitterPosition
                     ) {
-              isWaitingToRefreshLoadChartViewSplitterPosition
-                      = true;
+              isWaitingToRefreshLoadChartViewSplitterPosition = true;
               setTimeout(function() {
                 var
                         loadChartView =
@@ -1479,26 +1485,18 @@ angular.module(
                                 gridWidth,
                                 chartWidth
                                 );
-                isWaitingToRefreshLoadChartViewSplitterPosition
-                        =
-                        false;
+                isWaitingToRefreshLoadChartViewSplitterPosition = false;
               }, 0);
             }
-            if (sourceControlType !=
-                    'GanttChart' && !
-                    isWaitingToRefreshGanttChartViewSplitterPosition
-                    ) {
-              isWaitingToRefreshGanttChartViewSplitterPosition
-                      = true;
+            if (sourceControlType !== 'GanttChart' && !isWaitingToRefreshGanttChartViewSplitterPosition) {
+              isWaitingToRefreshGanttChartViewSplitterPosition = true;
               setTimeout(function() {
                 ganttChartView
                         .setSplitterPosition(
                                 gridWidth,
                                 chartWidth
                                 );
-                isWaitingToRefreshGanttChartViewSplitterPosition
-                        =
-                        false;
+                isWaitingToRefreshGanttChartViewSplitterPosition = false;
               }, 0);
             }
           }
@@ -1540,4 +1538,13 @@ angular.module(
           $scope.setCustomBarColorToItem = setCustomBarColorToItem;
           $scope.setCustomScales = setCustomScales;
           $scope.splitRemainingWork = splitRemainingWork;
+          $scope.toggleDependencyConstraints = toggleDependencyConstraints;
+          $scope.zoomIn = zoomIn;
+          $scope.toggleBaseline = toggleBaseline;
+          $scope.toggleBaseline = toggleBaseline;
+          $scope.toggleBaseline = toggleBaseline;
+          $scope.toggleBaseline = toggleBaseline;
+          $scope.toggleBaseline = toggleBaseline;
+          $scope.toggleBaseline = toggleBaseline;
+
         });

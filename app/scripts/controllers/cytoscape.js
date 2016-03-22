@@ -1,4 +1,4 @@
-/*globals window, document, angular, cytoscape*/
+/*globals window, document, $, angular, cytoscape*/
 'use strict';
 
 /**
