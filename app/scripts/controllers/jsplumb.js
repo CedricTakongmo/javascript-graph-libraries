@@ -135,5 +135,6 @@ angular.module('javascriptGraphLibrariesApp')
         });
 
       }
+      $('#jsplumb-main').height(800);
       initializate();
     }]);

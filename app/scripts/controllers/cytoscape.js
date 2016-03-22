@@ -75,5 +75,6 @@ angular.module('javascriptGraphLibrariesApp')
             });
             return graphClone;
           }
+          $('#cytoscape-main').height(800);
           initializate();
         }]);
