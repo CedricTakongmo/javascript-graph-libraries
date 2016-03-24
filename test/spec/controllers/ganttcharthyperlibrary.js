@@ -302,7 +302,7 @@ describe('Controller: ganttcharthyperlibraryCtrl', function () {
     }));
 
     it('The gantt-chart-hyper-library-main div should not be empty', function () {
-        /*var GanttcharthyperlibraryHtml = $("#gantt-chart-hyper-library-main").html();
-        expect(GanttcharthyperlibraryHtml !== "").toBe(true);*/
+        var GanttcharthyperlibraryHtml = $("#gantt-chart-hyper-library-main").html();
+        expect(GanttcharthyperlibraryHtml !== "").toBe(true);
     });
 });
