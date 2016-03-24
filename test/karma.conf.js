@@ -22,7 +22,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      'bower_components/jquery/jquery.js',
+      'bower_components/jquery/dist/jquery.js',
       'bower_components/underscore/underscore.js',
       'bower_components/angular/angular.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
@@ -57,10 +57,14 @@ module.exports = function(config) {
       'bower_components/graphdracula/js/dracula_graffle.js',
       'bower_components/graphdracula/js/dracula_graph.js',
       'bower_components/graphdracula/js/dracula_algorithms.js',
-      "bower_components/ddslick/jquery.ddslick.min.js",
-      "app/scripts/**/*.js",
-      "test/mock/**/*.js",
-      "test/spec/**/*.js"
+      'bower_components/ddslick/jquery.ddslick.min.js',
+      'bower_components/GanttChartHyperLibrary/DlhSoft.ProjectData.GanttChart.HTML.Controls.js',
+      'bower_components/GanttChartHyperLibrary/DlhSoft.Data.HTML.Controls.js',
+      'bower_components/GanttChartHyperLibrary/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.js',
+      'bower_components/GanttChartHyperLibrary/DlhSoft.ProjectData.PertChart.HTML.Controls.js',
+      'app/scripts/**/*.js',
+      'test/mock/**/*.js',
+      'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude

@@ -10,7 +10,7 @@
 angular.module(
         'javascriptGraphLibrariesApp').controller(
         'ganttcharthyperlibraryCtrl',
-        function($scope) {
+        ['$scope', function($scope) {
           // Retrieve and store the control element for reference purposes.
           var ganttChartView =
                   document.querySelector(
@@ -1547,4 +1547,4 @@ angular.module(
           $scope.toggleBaseline = toggleBaseline;
           $scope.toggleBaseline = toggleBaseline;
 
-        });
+        }]);

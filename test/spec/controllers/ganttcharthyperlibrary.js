@@ -1,12 +1,12 @@
 /*globals describe, beforeEach, afterEach, inject, it, expect, setFixtures, JGL_KARMA_GLOBAL, $*/
 'use strict';
 
-describe('Controller: GanttcharthyperlibraryCtrl', function () {
+describe('Controller: ganttcharthyperlibraryCtrl', function () {
 
     // load the controller's module
     beforeEach(module('javascriptGraphLibrariesApp'));
 
-    var GanttcharthyperlibraryCtrl,
+    var ganttcharthyperlibraryCtrl,
             scope;
 
     // Initialize the controller and a mock scope
@@ -296,7 +296,7 @@ describe('Controller: GanttcharthyperlibraryCtrl', function () {
         page += "<\/div>";
 
         setFixtures(page);
-        GanttcharthyperlibraryCtrl = $controller('GanttcharthyperlibraryCtrl', {
+        ganttcharthyperlibraryCtrl = $controller('ganttcharthyperlibraryCtrl', {
             $scope: scope
         });
     }));
