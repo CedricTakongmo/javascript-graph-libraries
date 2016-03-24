@@ -210,6 +210,33 @@ module.exports = function(grunt) {
 	    '!<%= yeoman.dist %>/images/de_flag.png',
             '!<%= yeoman.dist %>/images/male.png',
             '!<%= yeoman.dist %>/images/female.png',
+            '!<%= yeoman.dist %>/images/IncreaseIndentation.png',
+	    '!<%= yeoman.dist %>/images/AddNew.png',
+            '!<%= yeoman.dist %>/images/Delete.png',
+            '!<%= yeoman.dist %>/images/InsertNew.png',
+	    '!<%= yeoman.dist %>/images/DecreaseIndentation.png',
+	    '!<%= yeoman.dist %>/images/Copy.png',
+            '!<%= yeoman.dist %>/images/SetColor.png',
+            '!<%= yeoman.dist %>/images/MoveUp.png',
+	    '!<%= yeoman.dist %>/images/MoveDown.png',
+	    '!<%= yeoman.dist %>/images/CustomScales.png',
+            '!<%= yeoman.dist %>/images/ZoomIn.png',
+            '!<%= yeoman.dist %>/images/DecreaseTimelinePage.png',
+	    '!<%= yeoman.dist %>/images/IncreaseTimelinePage.png',
+	    '!<%= yeoman.dist %>/images/Baseline.png',
+            '!<%= yeoman.dist %>/images/Paste.png',
+            '!<%= yeoman.dist %>/images/DependencyConstraints.png',
+            '!<%= yeoman.dist %>/images/LevelResources.png',
+	    '!<%= yeoman.dist %>/images/ScheduleChart.png',
+	    '!<%= yeoman.dist %>/images/CriticalPath.png',
+            '!<%= yeoman.dist %>/images/LoadChart.png',
+            '!<%= yeoman.dist %>/images/NetworkDiagram.png',
+            '!<%= yeoman.dist %>/images/ProjectStatistics.png',
+	    '!<%= yeoman.dist %>/images/LoadProjectXml.png',
+	    '!<%= yeoman.dist %>/images/SaveProjectXml.png',
+            '!<%= yeoman.dist %>/images/PertChart.png',
+            '!<%= yeoman.dist %>/images/Print.png',
+            '!<%= yeoman.dist %>/images/SplitRemainingWork.png'
         ]
       }
     },
@@ -467,6 +494,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
       'build',
       'test'
-     // 'newer:jshint'
   ]);
 };
