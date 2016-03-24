@@ -1,4 +1,4 @@
-/*globals describe, beforeEach, afterEach, inject, it, expect, setFixtures, JGL_KARMA_GLOBAL, $*/
+/*globals describe, beforeEach, inject, it, expect, setFixtures, $*/
 'use strict';
 
 describe('Controller: ganttcharthyperlibraryCtrl', function () {
@@ -302,7 +302,6 @@ describe('Controller: ganttcharthyperlibraryCtrl', function () {
     }));
 
     it('The gantt-chart-hyper-library-main div should not be empty', function () {
-        var GanttcharthyperlibraryHtml = $("#gantt-chart-hyper-library-main").html();
-        expect(GanttcharthyperlibraryHtml !== "").toBe(true);
+        expect($("#gantt-chart-hyper-library-main #ganttChartView").html() === "...").toBe(false);
     });
 });
