@@ -389,13 +389,13 @@ module.exports = function(grunt) {
     },
     // Test settings
     karma: {
-      'jgl-dev': {
-        configFile: 'test/karma.conf.js',
-        singleRun: false
-      },
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: true
+      },
+      dev: {
+        configFile: 'test/karma.conf.js',
+        singleRun: false
       }
     },
     jscs: {
@@ -442,7 +442,7 @@ module.exports = function(grunt) {
       'concurrent:test',
       'autoprefixer',
       'connect:test',
-      'karma'
+      'karma:unit'
   ]);
 
   grunt.registerTask('build', [
