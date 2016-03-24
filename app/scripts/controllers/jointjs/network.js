@@ -1,23 +1,16 @@
 /*globals $, angular, joint*/
 'use strict';
-
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:jointJSCtrl
+ * @name javascriptGraphLibrariesApp.controller:network
  * @description
- * # jointJSCtrl
+ * # network
  * Controller of the javascriptGraphLibrariesApp
  */
-angular.module('javascriptGraphLibrariesApp')
-    .controller('jointjsCtrl', ['$scope', 'graphFactory', 'cfpLoadingBar', '$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
-
+angular.module('javascriptGraphLibrariesApp').factory('jointjsNetwork', ['graphFactory', 'cfpLoadingBar', '$timeout',
+    function(graphFactory, cfpLoadingBar, $timeout) {
       function initializate() {
-
-        graphFactory.getGraphs()
-            .success(draw)
-                .error(function(error) {
-                  $scope.status = 'Unable to load customer data: ' + error.message;
-                });
+        return graphFactory.getGraphs();
       }
 
       function draw(datain) {
@@ -26,9 +19,9 @@ angular.module('javascriptGraphLibrariesApp')
           cfpLoadingBar.complete();
         }, 5000);
         var graph = new joint.dia.Graph(),
-            currentNodes = {};
+                currentNodes = {};
         new joint.dia.Paper({
-          el: $('#jointjs-main'),
+          el: $('#jointjs-network'),
           width: 1100,
           height: 800,
           gridSize: 1,
@@ -38,7 +31,7 @@ angular.module('javascriptGraphLibrariesApp')
           var cell = new joint.shapes.fsa.State({
             position: {
               x: Math.random() * 1100,
-              y: Math.random() * 800
+              y: Math.random() * 700
             },
             size: {
               width: 40,
@@ -59,7 +52,6 @@ angular.module('javascriptGraphLibrariesApp')
           });
           graph.addCell(cell);
           currentNodes[node.id] = cell;
-
         });
         datain.graph.edges.forEach(function(edge) {
           var cell = new joint.shapes.fsa.Arrow({
@@ -84,5 +76,9 @@ angular.module('javascriptGraphLibrariesApp')
           return cell;
         });
       }
-      initializate();
-    }]);
+      return {
+        initializate: initializate,
+        draw: draw
+      };
+    }
+]);

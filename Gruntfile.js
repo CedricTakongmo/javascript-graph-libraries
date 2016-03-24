@@ -206,8 +206,10 @@ module.exports = function(grunt) {
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= yeoman.dist %>/styles/fonts/*',
-			'!<%= yeoman.dist %>/images/uk_flag.png',
-			'!<%= yeoman.dist %>/images/de_flag.png'
+	    '!<%= yeoman.dist %>/images/uk_flag.png',
+	    '!<%= yeoman.dist %>/images/de_flag.png',
+            '!<%= yeoman.dist %>/images/male.png',
+            '!<%= yeoman.dist %>/images/female.png',
         ]
       }
     },
@@ -464,7 +466,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
       'build',
-      'test',
-      'newer:jshint'
+      'test'
+     // 'newer:jshint'
   ]);
 };
