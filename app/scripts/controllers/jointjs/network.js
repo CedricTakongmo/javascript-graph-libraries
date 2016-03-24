@@ -2,9 +2,9 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:network
+ * @name javascriptGraphLibrariesApp.factory:jointjsNetwork
  * @description
- * # network
+ * # jointjsNetwork
  * Controller of the javascriptGraphLibrariesApp
  */
 angular.module('javascriptGraphLibrariesApp').factory('jointjsNetwork', ['graphFactory', 'cfpLoadingBar', '$timeout',

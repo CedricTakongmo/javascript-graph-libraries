@@ -2,9 +2,9 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:petrinets
+ * @name javascriptGraphLibrariesApp.controller:jointjsPetrinets
  * @description
- * # petrinets
+ * # jointjsPetrinets
  * Controller of the javascriptGraphLibrariesApp
  */
 angular.module('javascriptGraphLibrariesApp').factory('jointjsPetrinets', ['graphFactory', 'cfpLoadingBar', '$timeout',

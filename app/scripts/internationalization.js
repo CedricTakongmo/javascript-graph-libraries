@@ -44,7 +44,8 @@
       //config.html
       CONFIG_LANGUAGE_HEADER: 'Language - Configure your language',
       CONFIG_PERFORMANCE_HEADER: 'Performance - Ability to work under big data',
-      CONFIG_PERFORMANCE_DATA_SOURCE: 'Data Source :'
+      CONFIG_PERFORMANCE_DATA_SOURCE: 'Data Source :',
+      APP_NAV_GANT_CHART_HYPER_LIBRARY: 'Gantt Chart'
     },
     DE_DE: {
       //index.html
@@ -89,7 +90,9 @@
       //config.html
       CONFIG_LANGUAGE_HEADER: 'Spracheinstellung - Konfigurieren Sie Ihre Sprache',
       CONFIG_PERFORMANCE_HEADER: 'Leistung - Faehigkeit, groesse Datenmenge zu verarbeiten',
-      CONFIG_PERFORMANCE_DATA_SOURCE: 'Datenquelle: '
+      CONFIG_PERFORMANCE_DATA_SOURCE: 'Datenquelle: ',
+      //jointjs.html
+      APP_NAV_GANT_CHART_HYPER_LIBRARY: 'Gantt-Diagramm'
     }
   };
 }
