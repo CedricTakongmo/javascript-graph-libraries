@@ -62,6 +62,7 @@ module.exports = function(config) {
       'bower_components/GanttChartHyperLibrary/DlhSoft.Data.HTML.Controls.js',
       'bower_components/GanttChartHyperLibrary/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.js',
       'bower_components/GanttChartHyperLibrary/DlhSoft.ProjectData.PertChart.HTML.Controls.js',
+      'bower_components/gantt-chart-d3/gantt-chart-d3.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'

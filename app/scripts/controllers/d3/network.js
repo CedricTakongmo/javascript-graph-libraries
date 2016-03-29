@@ -26,7 +26,7 @@ angular.module('javascriptGraphLibrariesApp').factory('d3Network', ['graphFactor
                     linkDistance = 200,
                     colors = d3.scale.category10(),
                     dataset = parseGraph(graph),
-                    svg = d3.select('#d3-main').append('svg').attr({
+                    svg = d3.select('#d3-network').append('svg').attr({
                 width: w,
                 height: h
             }),

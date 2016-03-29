@@ -37,13 +37,24 @@ describe('Controller: d3Ctrl', function () {
         httpBackend.verifyNoOutstandingRequest();
     });
 
-    it('The jointjs-main div should not be empty', function () {
-        var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL,
-                httpResponse = JGL_KARMA_GLOBAL.DATA_POINTS;
-		httpBackend.whenGET(JGL_KARMA_GLOBAL.MAIN_VIEW_URL).respond(200, '');
-        httpBackend.expectGET(url).respond(200, httpResponse);
+    it('The d3-network div should not be empty', function () {
+        var url = JGL_KARMA_GLOBAL.DATA_POINTS_URL;
+        httpBackend.whenGET(JGL_KARMA_GLOBAL.MAIN_VIEW_URL).respond(200, '');
+        httpBackend.whenGET(JGL_KARMA_GLOBAL.DATA_D3_GANTT_CHART_URL).respond(200,
+                JGL_KARMA_GLOBAL.DATA_D3_GANTT_CHART);
+        httpBackend.expectGET(url).respond(200, JGL_KARMA_GLOBAL.DATA_POINTS);
         httpBackend.flush();
-        var d3Html = $("#d3-main").html();
+        var d3Html = $("#d3-network").html();
         expect(d3Html !== "").toBe(true);
+    });
+    it('The d3-gantt-chart-d3 div should not be empty', function () {
+        var url = JGL_KARMA_GLOBAL.DATA_D3_GANTT_CHART_URL;
+        httpBackend.whenGET(JGL_KARMA_GLOBAL.MAIN_VIEW_URL).respond(200, '');
+        httpBackend.whenGET(JGL_KARMA_GLOBAL.DATA_POINTS_URL).respond(200,
+                JGL_KARMA_GLOBAL.DATA_POINTS);
+        httpBackend.expectGET(url).respond(200, JGL_KARMA_GLOBAL.DATA_D3_GANTT_CHART);
+        httpBackend.flush();
+        var d3GanttChart = $("#d3-gantt-chart").html();
+        expect(d3GanttChart !== "").toBe(true);
     });
 });
