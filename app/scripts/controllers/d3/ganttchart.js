@@ -8,217 +8,129 @@
  * # d3Network
  * Controller of the javascriptGraphLibrariesApp
  */
-angular.module('javascriptGraphLibrariesApp').factory('d3Network', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function (graphFactory, cfpLoadingBar, $timeout) {
-        var hasViewChanged = false;
+angular.module('javascriptGraphLibrariesApp').factory('d3GanttChart', ['d3CangttChartFactory', 'cfpLoadingBar', '$timeout',
+    function (d3CangttChartFactory, cfpLoadingBar, $timeout) {
 
         function initializate() {
-           return  graphFactory.getGraphs();
+            return  d3CangttChartFactory.getD3GanttCharts();
         }
 
-        function draw(graph) {
+        function draw(data) {
             cfpLoadingBar.start();
             $timeout(function () {
                 cfpLoadingBar.complete();
             }, 5000);
-            var w = (window.innerWidth > 1000) ? 1000 : window.innerWidth - 50,
-                    h = (window.innerHeight > 600) ? 600 : window.innerHeight - 50,
-                    linkDistance = 200,
-                    colors = d3.scale.category10(),
-                    dataset = parseGraph(graph),
-                    svg = d3.select('#d3-main').append('svg').attr({
-                width: w,
-                height: h
-            }),
-                    force = d3.layout.force()
-                    .nodes(dataset.nodes)
-                    .links(dataset.edges)
-                    .size([w, h])
-                    .linkDistance([linkDistance])
-                    .charge([-500])
-                    .theta(0.1)
-                    .gravity(0.05)
-                    .start(),
-                    edges = svg.selectAll('line')
-                    .data(dataset.edges)
-                    .enter()
-                    .append('line')
-                    .attr('id', function (d, i) {
-                        return 'edge' + i;
-                    })
-                    .attr('marker-end', 'url(#arrowhead)')
-                    .style('stroke', '#ccc')
-                    .style('pointer-events', 'none'),
-                    nodes = svg.selectAll('circle')
-                    .data(dataset.nodes)
-                    .enter()
-                    .append('circle')
-                    .attr({
-                        r: 5
-                    })
-                    .style('fill', function (d, i) {
-                        return colors(i);
-                    })
-                    .call(force.drag),
-                    nodelabels = svg.selectAll('.nodelabel')
-                    .data(dataset.nodes)
-                    .enter()
-                    .append('text')
-                    .attr({
-                        x: function (d) {
-                            return d.x;
-                        },
-                        y: function (d) {
-                            return d.y;
-                        },
-                        class: 'nodelabel',
-                        stroke: 'black'
-                    })
-                    .text(function (d) {
-                        return d.name;
-                    }),
-                    edgepaths = svg.selectAll('.edgepath')
-                    .data(dataset.edges)
-                    .enter()
-                    .append('path')
-                    .attr({
-                        d: function (d) {
-                            return 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
-                        },
-                        class: 'edgepath',
-                        'fill-opacity': 0,
-                        'stroke-opacity': 0,
-                        fill: 'blue',
-                        stroke: 'red',
-                        id: function (d, i) {
-                            return 'edgepath' + i;
-                        }
-                    })
-                    .style('pointer-events', 'none'),
-                    edgelabels = svg.selectAll('.edgelabel')
-                    .data(dataset.edges)
-                    .enter()
-                    .append('text')
-                    .style('pointer-events', 'none')
-                    .attr({
-                        class: 'edgelabel',
-                        id: function (d, i) {
-                            return 'edgelabel' + i;
-                        },
-                        dx: 80,
-                        dy: 0,
-                        'font-size': 10,
-                        fill: '#aaa'
-                    });
-
-            edgelabels.append('textPath')
-                    .attr('xlink:href', function (d, i) {
-                        return '#edgepath' + i;
-                    })
-                    .style('pointer-events', 'none')
-                    .text(function (d) {
-                        return d.source.name + '/' + d.target.name;
-                    });
-
-            svg.append('defs').append('marker')
-                    .attr({
-                        id: 'arrowhead',
-                        viewBox: '-0 -5 10 10',
-                        refX: 25,
-                        refY: 0,
-                        //'markerUnits':'strokeWidth',
-                        orient: 'auto',
-                        markerWidth: 10,
-                        markerHeight: 10,
-                        xoverflow: 'visible'
-                    })
-                    .append('svg:path')
-                    .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-                    .attr('fill', '#ccc')
-                    .attr('stroke', '#ccc');
-
-            force.on('tick', function () {
-
-                edges.attr({
-                    x1: function (d) {
-                        return d.source.x;
-                    },
-                    y1: function (d) {
-                        return d.source.y;
-                    },
-                    x2: function (d) {
-                        return d.target.x;
-                    },
-                    y2: function (d) {
-                        return d.target.y;
-                    }
-                });
-
-                nodes.attr({
-                    cx: function (d) {
-                        return d.x;
-                    },
-                    cy: function (d) {
-                        return d.y;
-                    }
-                });
-
-                nodelabels.attr('x', function (d) {
-                    return d.x;
-                })
-                        .attr('y', function (d) {
-                            return d.y;
-                        });
-
-                edgepaths.attr('d', function (d) {
-                    var path = 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
-                    return path;
-                });
-
-                edgelabels.attr('transform', function (d) {
-                    if ((d.target.x < d.source.x) && !hasViewChanged) {
-                        var bbox = this.getBBox(),
-                                rx = bbox.x + bbox.width / 2,
-                                ry = bbox.y + bbox.height / 2;
-                        return 'rotate(180 ' + rx + ' ' + ry + ')';
-                    } else {
-                        return 'rotate(0)';
-                    }
-                });
+            var tasks = data.map(function (el) {
+                el.startDate = new Date(el.startDate);
+                el.endDate = new Date(el.endDate);
+                return el;
             });
-        }
+            var taskStatus = {
+                "SUCCEEDED": "bar",
+                "FAILED": "bar-failed",
+                "RUNNING": "bar-running",
+                "KILLED": "bar-killed"
+            };
 
-        function parseGraph(graph) {
-            var graphClone = angular.copy(graph);
-            graphClone.graph.edges = graph.graph.edges.map(function (element) {
-                return {
-                    source: arrayObjectIndexOf(graph.graph.nodes, element.source, 'id'),
-                    target: arrayObjectIndexOf(graph.graph.nodes, element.target, 'id')
-                };
+            var taskNames = ["D Job", "P Job", "E Job", "A Job", "N Job"];
+
+            tasks.sort(function (a, b) {
+                return a.endDate - b.endDate;
             });
-            graphClone.graph.nodes = graph.graph.nodes.map(function (element) {
-                return {
-                    name: element.id
-                };
+            tasks.sort(function (a, b) {
+                return a.startDate - b.startDate;
             });
+            var format = "%H:%M";
+            var timeDomainString = "1day";
+            var margin = {
+                top: 20,
+                right: 40,
+                bottom: 20,
+                left: 80
+            };
 
-            return graphClone.graph;
-        }
+            function changeTimeDomain(timeDomainString) {
+                window.timeDomainString = timeDomainString;
+                switch (timeDomainString) {
+                    case "1hr":
+                        format = "%H:%M:%S";
+                        gantt.timeDomain([d3.time.hour.offset(getEndDate(), -1), getEndDate()]);
+                        break;
+                    case "3hr":
+                        format = "%H:%M";
+                        gantt.timeDomain([d3.time.hour.offset(getEndDate(), -3), getEndDate()]);
+                        break;
 
-        function arrayObjectIndexOf(myArray, searchTerm, property) {
-            for (var i = 0; i < myArray.length; i++) {
-                if (myArray[i][property] === searchTerm) {
-                    return i;
+                    case "6hr":
+                        format = "%H:%M";
+                        gantt.timeDomain([d3.time.hour.offset(getEndDate(), -6), getEndDate()]);
+                        break;
+
+                    case "1day":
+                        format = "%H:%M";
+                        gantt.timeDomain([d3.time.day.offset(getEndDate(), -1), getEndDate()]);
+                        break;
+
+                    case "1week":
+                        format = "%a %H:%M";
+                        gantt.timeDomain([d3.time.day.offset(getEndDate(), -7), getEndDate()]);
+                        break;
+                    default:
+                        format = "%H:%M"
+
                 }
+                gantt.tickFormat(format);
+                gantt.redraw(tasks);
             }
-            return -1;
-        }
-        function setHasViewChanged(value) {
-            hasViewChanged = value;
+            function getEndDate() {
+                var lastEndDate = Date.now();
+                if (tasks.length > 0) {
+                    lastEndDate = tasks[tasks.length - 1].endDate;
+                }
+                return lastEndDate;
+            }
+            function addTask() {
+                var lastEndDate = getEndDate();
+                var taskStatusKeys = Object.keys(taskStatus);
+                var taskStatusName = taskStatusKeys[Math.floor(Math.random() * taskStatusKeys.length)];
+                var taskName = taskNames[Math.floor(Math.random() * taskNames.length)];
+
+                tasks.push({
+                    "startDate": d3.time.hour.offset(lastEndDate, Math.ceil(1 * Math.random())),
+                    "endDate": d3.time.hour.offset(lastEndDate, (Math.ceil(Math.random() * 3)) + 1),
+                    "taskName": taskName,
+                    "status": taskStatusName
+                });
+
+                changeTimeDomain(timeDomainString);
+                gantt.redraw(tasks);
+            }
+            function removeTask() {
+                tasks.pop();
+                changeTimeDomain(timeDomainString);
+                gantt.redraw(tasks);
+            }
+            
+            var gantt = d3.gantt()
+                    .selector("#d3-gantt-chart")
+                    .taskTypes(taskNames)
+                    .taskStatus(taskStatus)
+                    .tickFormat(format)
+                    .height(700)
+                    .width(800)
+                    .margin(margin)
+                    .timeDomainMode("fixed");
+            changeTimeDomain(timeDomainString);
+            gantt(tasks);
+            
+            return {
+                addTask: addTask,
+                removeTask: removeTask,
+                changeTimeDomain: changeTimeDomain
+            }
         }
         return {
             initializate: initializate,
-            draw: draw,
-            setHasViewChanged: setHasViewChanged
+            draw: draw
         };
     }]);

@@ -30,7 +30,7 @@ angular.module('javascriptGraphLibrariesApp').factory('jointjsNetwork', ['graphF
         datain.graph.nodes.forEach(function(node) {
           var cell = new joint.shapes.fsa.State({
             position: {
-              x: Math.random() * 1100,
+              x: Math.random() * 1000,
               y: Math.random() * 700
             },
             size: {

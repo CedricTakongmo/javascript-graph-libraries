@@ -24,7 +24,8 @@
     "graphdracula": "v0.0.3alpha5",
     "jsPlumb": "2.0.7",
     "ddslick": "*",
-    "GanttChartHyperLibrary": "http://DlhSoft.com/Packages/GanttChartHyperLibrary.zip"
+    "GanttChartHyperLibrary": "http://DlhSoft.com/Packages/GanttChartHyperLibrary.zip",
+    "gantt-chart-d3": "https://github.com/dk8996/Gantt-Chart/archive/master.zip"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0",
