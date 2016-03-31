@@ -21,11 +21,11 @@ angular.module('javascriptGraphLibrariesApp')
       var nodes, edges, network;
 
       // convenience method to stringify a JSON object
-      $scope.toJSON = function (obj) {
+      $scope.toJSON = function(obj) {
         return JSON.stringify(obj, null, 4);
       };
 
-      $scope.addNode = function () {
+      $scope.addNode = function() {
         try {
           nodes.add({
             id: document.getElementById('node-id').value,
@@ -36,7 +36,7 @@ angular.module('javascriptGraphLibrariesApp')
         }
       };
 
-      $scope.updateNode = function () {
+      $scope.updateNode = function() {
         try {
           nodes.update({
             id: document.getElementById('node-id').value,
@@ -46,7 +46,7 @@ angular.module('javascriptGraphLibrariesApp')
           alert(err);
         }
       };
-      $scope.removeNode = function () {
+      $scope.removeNode = function() {
         try {
           nodes.remove({
             id: document.getElementById('node-id').value
@@ -56,7 +56,7 @@ angular.module('javascriptGraphLibrariesApp')
         }
       };
 
-      $scope.addEdge = function () {
+      $scope.addEdge = function() {
         try {
           edges.add({
             id: document.getElementById('edge-id').value,
@@ -68,7 +68,7 @@ angular.module('javascriptGraphLibrariesApp')
           alert(err);
         }
       };
-      $scope.updateEdge = function () {
+      $scope.updateEdge = function() {
         try {
           edges.update({
             id: document.getElementById('edge-id').value,
@@ -80,7 +80,7 @@ angular.module('javascriptGraphLibrariesApp')
           alert(err);
         }
       };
-      $scope.removeEdge = function () {
+      $scope.removeEdge = function() {
         try {
           edges.remove({
             id: document.getElementById('edge-id').value

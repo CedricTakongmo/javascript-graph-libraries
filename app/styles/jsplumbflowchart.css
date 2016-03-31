@@ -1,0 +1,109 @@
+.jsplumb-flowchart .demo {
+    /* for IE10+ touch devices */
+    touch-action:none;
+}
+
+.jsplumb-flowchart .flowchart-demo .window {
+    border: 1px solid #346789;
+    box-shadow: 2px 2px 19px #aaa;
+    -o-box-shadow: 2px 2px 19px #aaa;
+    -webkit-box-shadow: 2px 2px 19px #aaa;
+    -moz-box-shadow: 2px 2px 19px #aaa;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    opacity: 0.8;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 20;
+    position: absolute;
+    background-color: #eeeeef;
+    color: black;
+    font-family: helvetica, sans-serif;
+    padding: 0.5em;
+    font-size: 0.9em;
+    -webkit-transition: -webkit-box-shadow 0.15s ease-in;
+    -moz-transition: -moz-box-shadow 0.15s ease-in;
+    -o-transition: -o-box-shadow 0.15s ease-in;
+    transition: box-shadow 0.15s ease-in;
+}
+
+.jsplumb-flowchart .flowchart-demo .window:hover {
+    box-shadow: 2px 2px 19px #444;
+    -o-box-shadow: 2px 2px 19px #444;
+    -webkit-box-shadow: 2px 2px 19px #444;
+    -moz-box-shadow: 2px 2px 19px #444;
+    opacity: 0.6;
+}
+
+.jsplumb-flowchart .flowchart-demo .active {
+    border: 1px dotted green;
+}
+
+.jsplumb-flowchart .flowchart-demo .hover {
+    border: 1px dotted red;
+}
+
+.jsplumb-flowchart #flowchartWindow1 {
+    top: 34em;
+    left: 5em;
+}
+
+.jsplumb-flowchart #flowchartWindow2 {
+    top: 7em;
+    left: 36em;
+}
+
+.jsplumb-flowchart #flowchartWindow3 {
+    top: 27em;
+    left: 48em;
+}
+
+.jsplumb-flowchart #flowchartWindow4 {
+    top: 23em;
+    left: 22em;
+}
+
+.jsplumb-flowchart .flowchart-demo .jsplumb-connector {
+    z-index: 4;
+}
+
+.jsplumb-flowchart .flowchart-demo .jsplumb-endpoint, .endpointTargetLabel, .endpointSourceLabel {
+    z-index: 21;
+    cursor: pointer;
+}
+
+.jsplumb-flowchart .flowchart-demo .aLabel {
+    background-color: white;
+    padding: 0.4em;
+    font: 12px sans-serif;
+    color: #444;
+    z-index: 21;
+    border: 1px dotted gray;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.jsplumb-flowchart .flowchart-demo .aLabel.jsplumb-hover {
+    background-color: #5C96BC;
+    color: white;
+    border: 1px solid white;
+}
+
+.jsplumb-flowchart .window.jsplumb-connected {
+    border: 2px solid green;
+}
+
+.jsplumb-flowchart .jsplumb-drag {
+    outline: 4px solid pink !important;
+}
+
+.jsplumb-flowchart path, .jsplumb-endpoint {
+    cursor: pointer;
+}
+
+.jsplumb-flowchart .jsplumb-overlay {
+    background-color:transparent;
+}
