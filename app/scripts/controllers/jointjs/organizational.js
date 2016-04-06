@@ -43,7 +43,7 @@ angular.module('javascriptGraphLibrariesApp').factory('jointjsOrganizational', [
                 stroke: 'none'
               },
               image: {
-                'xlink:href': '/images/' + image,
+                'xlink:href': window.location.origin + window.location.pathname + '/images/' + image,
                 opacity: 0.7
               },
               '.rank': {

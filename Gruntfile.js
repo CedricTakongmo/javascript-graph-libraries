@@ -437,6 +437,9 @@ module.exports = function(grunt) {
         config: '.jscsrc',
         fix: true
       }
+    },
+    ngdoc: {
+        all: ['src/**/*.js']
     }
   });
 
