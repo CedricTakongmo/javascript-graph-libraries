@@ -3,18 +3,26 @@
 
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:d3Ctrl
+ * @name Controller.Controller:d3Ctrl
+ * @returns {void} void function
+ * @requires $scope
+ * @requires Factory.Factory:d3NetworkFactory
+ * @requires Factory.Factory:d3GanttChartControllFactory
  * @description
- * # d3Ctrl
- * Controller of the javascriptGraphLibrariesApp
+ * # d3 - Controller
+ * D3.js is a JavaScript library for manipulating documents based on data.
+ * D3 helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on
+ * web standards gives you the full capabilities of modern browsers without
+ * tying yourself to a proprietary framework, combining powerful visualization
+ * components and a data-driven approach to DOM manipulation.
  */
 angular.module('javascriptGraphLibrariesApp')
-        .controller('d3Ctrl', ['$scope', 'd3Network', 'd3GanttChart', function($scope, d3Network, d3GanttChart) {
-          d3Network.initializate().success(d3Network.draw).error(function(error) {
+        .controller('d3Ctrl', ['$scope', 'd3NetworkFactory', 'd3GanttChartControllFactory', function($scope, d3NetworkFactory, d3GanttChartControllFactory) {
+          d3NetworkFactory.initializate().success(d3NetworkFactory.draw).error(function(error) {
             alert(error);
           });
-          d3GanttChart.initializate().success(function(data) {
-            var g = d3GanttChart.draw(data.tasks);
+          d3GanttChartControllFactory.initializate().success(function(data) {
+            var g = d3GanttChartControllFactory.draw(data.tasks);
             $scope.addTask = g.addTask;
             $scope.removeTask = g.removeTask;
             $scope.changeTimeDomain = g.changeTimeDomain;
@@ -22,6 +30,6 @@ angular.module('javascriptGraphLibrariesApp')
             alert(error);
           });
           $scope.$on('$routeChangeStart', function() {
-            d3Network.setHasViewChanged(true);
+            d3NetworkFactory.setHasViewChanged(true);
           });
         }]);

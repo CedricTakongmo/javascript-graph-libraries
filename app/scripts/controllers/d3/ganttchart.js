@@ -3,16 +3,20 @@
 
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.factory:d3Network
+ * @name Factory.Factory:d3GanttChartControllFactory
+ * @requires Factory.Factory:d3CangttChartFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
+ * @returns {d3GanttChartFactory} d3GanttChartControllFactory-object
  * @description
- * # d3Network
- * Controller of the javascriptGraphLibrariesApp
+ * # d3 Gantt Chart
+ * A factory for a basic implementation of a Gantt Chart using D3.js.
  */
-angular.module('javascriptGraphLibrariesApp').factory('d3GanttChart', ['d3CangttChartFactory', 'cfpLoadingBar', '$timeout',
+angular.module('javascriptGraphLibrariesApp').factory('d3GanttChartControllFactory', ['d3GanttChartFactory', 'cfpLoadingBar', '$timeout',
     function(d3CangttChartFactory, cfpLoadingBar, $timeout) {
 
       function initializate() {
-        return d3CangttChartFactory.getD3GanttCharts();
+        return d3CangttChartFactory.getd3GanttChartFactorys();
       }
 
       function draw(data) {

@@ -2,10 +2,15 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:ConfigCtrl
+ * @name Controller.Controller:ConfigCtrl
+ * @requires $scope
+ * @requires appSettings
+ * @requires $translate
+ * @requires Factory.Factory:performanceFactory
+ * @requires Factory.Factory:languageFactory
  * @description
- * # ConfigCtrl
- * Controller of the javascriptGraphLibrariesApp
+ * # Config - Controller
+ * Controller of the Config of the app
  */
 angular.module(
         'javascriptGraphLibrariesApp').controller(

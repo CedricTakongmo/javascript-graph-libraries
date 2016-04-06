@@ -2,17 +2,17 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:jsplumbPetrinets
+ * @name Factory.Factory:jsplumbFlowChartFactory
+ * @requires Factory.Factory:graphFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # jsplumbPetrinets
- * Controller of the javascriptGraphLibrariesApp
+ * # jsplumbFlowChartFactory
+ * Example for an example of using the Flowchart connectors
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbFlowChart', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function(graphFactory, cfpLoadingBar, $timeout) {
-      function initializate(errorCallback) {
-        /*graphFactory.getGraphs().success(draw).error(function(error) {
-         errorCallback(error);
-         });*/
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbFlowChartFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
+    function() {
+      function initializate() {
         draw();
       }
 

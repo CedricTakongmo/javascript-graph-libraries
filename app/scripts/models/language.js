@@ -3,10 +3,12 @@
 
 /**
  * @ngdoc function
- * @name javascriptlanguageLibrariesApp.factory:languageFactory
+ * @name Factory.Factory:languageFactory
+ * @requires $http
+ * @requires appSettings
  * @description
- * # languageFactory
- * Factory of the javascriptlanguageLibrariesApp
+ * # Language Factory
+ * Factory of the javascriptGraphLibrariesApp - Generate Language data
  */
 angular.module('javascriptGraphLibrariesApp')
         .factory('languageFactory', ['$http', 'appSettings', function($http, appSettings) {

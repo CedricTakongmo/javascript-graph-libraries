@@ -2,17 +2,16 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:jointjsOrganizational
+ * @name Factory.Factory:jointjsOrganizationalFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # jointjsOrganizational
- * Controller of the javascriptGraphLibrariesApp
+ * # jointjsOrganizationalFactory
+ * Example of the javascriptGraphLibrariesApp
  */
-angular.module('javascriptGraphLibrariesApp').factory('jointjsOrganizational', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function(graphFactory, cfpLoadingBar, $timeout) {
+angular.module('javascriptGraphLibrariesApp').factory('jointjsOrganizationalFactory', ['cfpLoadingBar', '$timeout',
+    function(cfpLoadingBar, $timeout) {
       function initializate() {
-        /*graphFactory.getGraphs().success(draw).error(function (error) {
-            errorCallback(error);
-        });*/
       }
 
       function draw() {

@@ -2,17 +2,17 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.factory:jsplumbStateMachine
+ * @name Factory.Factory:jsplumbStateMachineFactory
+ * @requires Factory.Factory:graphFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # jsplumbStateMachine
- * factory of the javascriptGraphLibrariesApp
+ * # JsPlumb State Machine Factory
+ * Example of how to use the 'StateMachine' connectors, with elements as drag sources and targets
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbStateMachine', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function(graphFactory, cfpLoadingBar, $timeout) {
-      function initializate(errorCallback) {
-        /*graphFactory.getGraphs().success(draw).error(function(error) {
-         errorCallback(error);
-         });*/
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbStateMachineFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
+    function() {
+      function initializate() {
         draw();
       }
 

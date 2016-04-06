@@ -2,9 +2,11 @@
 
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:headerCtrl
+ * @name Controller.Controller:headerCtrl
+ * @requires $scope
+ * @requires $location
  * @description
- * # headerCtrl
+ * # Header - Controller
  * Controller of the javascriptGraphLibrariesApp
  */
 angular.module('javascriptGraphLibrariesApp')

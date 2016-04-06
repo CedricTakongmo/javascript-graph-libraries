@@ -25,6 +25,8 @@ module.exports = function(grunt) {
     dist: 'dist'
   };
 
+  grunt.loadNpmTasks('grunt-ngdocs');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
     // Project settings
@@ -92,6 +94,13 @@ module.exports = function(grunt) {
                 connect.static(appConfig.app)
             ];
           }
+        }
+      },
+      livedemodocs: {
+        options: {
+          open: true,
+          port: 9001,
+          base:'./docs'
         }
       },
       test: {
@@ -438,11 +447,15 @@ module.exports = function(grunt) {
         fix: true
       }
     },
-    ngdoc: {
-        all: ['src/**/*.js']
+    ngdocs: {
+      options: {
+        dest: './docs',
+        html5Mode: false,
+        title: 'JavaScript Graph Library Documentation'
+      },
+      all: ['<%= yeoman.app %>/scripts/**/*.js ']
     }
   });
-
   grunt.registerTask('serve', 'Compile then start a connect web server',
             function(target) {
               if (target === 'dist') {
@@ -452,9 +465,11 @@ module.exports = function(grunt) {
               grunt.task.run([
                   'clean:server',
                   'wiredep',
+                  'ngdocs',
                   'concurrent:server',
                   'autoprefixer:server',
                   'connect:livereload',
+                  'connect:livedemodocs',
                   'watch'
               ]);
             });
@@ -471,6 +486,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [
       'clean:server',
       'wiredep',
+      'ngdocs',
       'concurrent:test',
       'autoprefixer',
       'connect:test',
@@ -480,6 +496,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
       'clean:dist',
       'wiredep',
+      'ngdocs',
       'useminPrepare',
       'autoprefixer',
       'ngtemplates',

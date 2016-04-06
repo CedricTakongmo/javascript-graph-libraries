@@ -2,17 +2,17 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:jointjsPetrinets
+ * @name Factory.Factory:jointjsPetrinetsFactory
+ * @requires Factory.Factory:graphFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # jointjsPetrinets
- * Controller of the javascriptGraphLibrariesApp
+ * # jointjsPetrinetsFactory
+ * Example of the javascriptGraphLibrariesApp
  */
-angular.module('javascriptGraphLibrariesApp').factory('jointjsPetrinets', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function(graphFactory, cfpLoadingBar, $timeout) {
-      function initializate(errorCallback) {
-        /*graphFactory.getGraphs().success(draw).error(function(error) {
-         errorCallback(error);
-         });*/
+angular.module('javascriptGraphLibrariesApp').factory('jointjsPetrinetsFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
+    function() {
+      function initializate() {
         draw();
       }
 

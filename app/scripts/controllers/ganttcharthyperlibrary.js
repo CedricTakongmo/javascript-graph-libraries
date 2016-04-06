@@ -2,10 +2,12 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:GanttcharthyperlibraryCtrl
+ * @name Controller.Controller:ganttcharthyperlibraryCtrl
+ * @requires $scope
  * @description
- * # GanttcharthyperlibraryCtrl
- * Controller of the javascriptGraphLibrariesApp
+ * # Gantt chart Hyper library Controller
+ * Gantt, Schedule, Load, and PERT Chart components with multi-platform support,
+ * customizable appearance and behavior, high performance, XML import/export, etc.
  */
 angular.module(
         'javascriptGraphLibrariesApp').controller(
