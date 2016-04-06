@@ -63,7 +63,7 @@ JGL_KARMA_GLOBAL.DATA_PERFORMANCE = [
     }
 ];
 JGL_KARMA_GLOBAL.MAIN_VIEW_URL = 'views/main.html';
-JGL_KARMA_GLOBAL.DATA_D3_GANTT_CHART_URL = 'data/d3CangttChart.json';
+JGL_KARMA_GLOBAL.DATA_D3_GANTT_CHART_URL = 'data/d3GanttChart.json';
 JGL_KARMA_GLOBAL.DATA_D3_GANTT_CHART = {
     "tasks": [{
             "startDate": "2012-12-09T06:36:45.000Z",

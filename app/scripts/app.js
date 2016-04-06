@@ -88,7 +88,7 @@ angular.module('javascriptGraphLibrariesApp', [
     url: 'data/language.json'
   },
   d3GanttChartFactory:{
-    url: 'data/d3CangttChart.json'
+    url: 'data/d3GanttChart.json'
   }
 }).config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider) {
   $translateProvider.translations('de_DE', jglGetTranslations().DE_DE);

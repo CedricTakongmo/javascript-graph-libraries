@@ -12,7 +12,7 @@
  * # d3 Gantt Chart
  * A factory for a basic implementation of a Gantt Chart using D3.js.
  */
-angular.module('javascriptGraphLibrariesApp').factory('d3GanttChartControllFactory', ['d3CangttChartFactory', 'cfpLoadingBar', '$timeout',
+angular.module('javascriptGraphLibrariesApp').factory('d3GanttChartControllFactory', ['d3GanttChartFactory', 'cfpLoadingBar', '$timeout',
     function(d3CangttChartFactory, cfpLoadingBar, $timeout) {
 
       function initializate() {
