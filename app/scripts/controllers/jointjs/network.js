@@ -2,12 +2,15 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.factory:jointjsNetwork
+ * @name Factory.Factory:jointjsNetworkFactory
+ * @requires Factory.Factory:graphFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # jointjsNetwork
- * Controller of the javascriptGraphLibrariesApp
+ * # jointjsNetworkFactory
+ * Example of the javascriptGraphLibrariesApp
  */
-angular.module('javascriptGraphLibrariesApp').factory('jointjsNetwork', ['graphFactory', 'cfpLoadingBar', '$timeout',
+angular.module('javascriptGraphLibrariesApp').factory('jointjsNetworkFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
     function(graphFactory, cfpLoadingBar, $timeout) {
       function initializate() {
         return graphFactory.getGraphs();

@@ -3,12 +3,17 @@
 
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.factory:d3Network
+ * @name Factory.Factory:d3NetworkFactory
+ * @requires Factory.Factory:d3CangttChartFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # d3Network
- * Controller of the javascriptGraphLibrariesApp
+ * # d3NetworkFactory - Factory
+ * This simple force-directed graph. A physical simulation of charged particles
+ * and springs places related elements in closer proximity, while unrelated elements
+ *  are farther apart. Layout algorithm inspired by Tim Dwyer and Thomas Jakobsen.
  */
-angular.module('javascriptGraphLibrariesApp').factory('d3Network', ['graphFactory', 'cfpLoadingBar', '$timeout',
+angular.module('javascriptGraphLibrariesApp').factory('d3NetworkFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
     function(graphFactory, cfpLoadingBar, $timeout) {
       var hasViewChanged = false;
 

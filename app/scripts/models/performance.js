@@ -3,10 +3,12 @@
 
 /**
  * @ngdoc function
- * @name javascriptperformanceLibrariesApp.factory:performanceFactory
+ * @name Factory.Factory:performanceFactory
+ * @requires $http
+ * @requires appSettings
  * @description
- * # performanceFactory
- * Factory of the javascriptperformanceLibrariesApp
+ * # Performance Factory
+ * Factory of the javascriptGraphLibrariesApp. Generate Performance data
  */
 angular.module('javascriptGraphLibrariesApp')
         .factory('performanceFactory', ['$http', 'appSettings', function($http, appSettings) {

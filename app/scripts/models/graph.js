@@ -3,10 +3,12 @@
 
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.factory:graphFactory
+ * @name Factory.Factory:graphFactory
+ * @requires $http
+ * @requires appSettings
  * @description
- * # graphFactory
- * Factory of the javascriptGraphLibrariesApp
+ * # Graph Factory
+ * Factory of the javascriptGraphLibrariesApp. Generate Graph Data
  */
 angular.module('javascriptGraphLibrariesApp')
         .factory('graphFactory', ['$http', 'appSettings', function($http, appSettings) {

@@ -2,17 +2,17 @@
 'use strict';
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:jsplumbPetrinets
+ * @name Factory.Factory:jsplumbDragAndDropFactory
+ * @requires Factory.Factory:graphFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # jsplumbPetrinets
- * Controller of the javascriptGraphLibrariesApp
+ * # jsplumbDragAndDropFactory
+ * Example for the original jsPlumb drag and drop example
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbDragAndDrop', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function(graphFactory, cfpLoadingBar, $timeout) {
-      function initializate(errorCallback) {
-        /*graphFactory.getGraphs().success(draw).error(function(error) {
-         errorCallback(error);
-         });*/
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbDragAndDropFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
+    function() {
+      function initializate() {
         draw();
       }
 

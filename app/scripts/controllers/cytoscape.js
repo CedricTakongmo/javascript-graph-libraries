@@ -3,10 +3,14 @@
 
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:cytoscapeCtrl
+ * @name Controller.Controller:cytoscapeCtrl
+ * @requires $scope
+ * @requires Factory.Factory:graphFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # cytoscapeCtrl
- * Controller of the javascriptGraphLibrariesApp
+ * # Cytoscape - Controller
+ * Graph theory (a.k.a. network) library for analysis and visualisation
  */
 angular.module('javascriptGraphLibrariesApp')
         .controller('cytoscapeCtrl', ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {

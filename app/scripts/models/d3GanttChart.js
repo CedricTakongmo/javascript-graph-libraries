@@ -3,37 +3,39 @@
 
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.factory:graphFactory
+ * @name Factory.Factory:d3GanttChartFactory
+ * @requires $http
+ * @requires appSettings
  * @description
- * # graphFactory
+ * # d3GanttChartFactory
  * Factory of the javascriptGraphLibrariesApp
  */
 angular.module('javascriptGraphLibrariesApp')
-        .factory('d3CangttChartFactory', ['$http', 'appSettings', function($http, appSettings) {
+        .factory('d3GanttChartFactory', ['$http', 'appSettings', function($http, appSettings) {
 
           var dataFactory = {};
 
           function getBaseUrl() {
-            return appSettings.d3GanttChart.url;
+            return appSettings.d3GanttChartFactory.url;
           }
 
-          dataFactory.getD3GanttCharts = function() {
+          dataFactory.getd3GanttChartFactorys = function() {
             return $http.get(getBaseUrl());
           };
 
-          dataFactory.getD3GanttChart = function(id) {
+          dataFactory.getd3GanttChartFactory = function(id) {
             return $http.get(getBaseUrl() + '/' + id);
           };
 
-          dataFactory.insertD3GanttChart = function(cust) {
+          dataFactory.insertd3GanttChartFactory = function(cust) {
             return $http.post(getBaseUrl(), cust);
           };
 
-          dataFactory.updateD3GanttChart = function(cust) {
+          dataFactory.updated3GanttChartFactory = function(cust) {
             return $http.put(getBaseUrl() + '/' + cust.ID, cust);
           };
 
-          dataFactory.deleteD3GanttChart = function(id) {
+          dataFactory.deleted3GanttChartFactory = function(id) {
             return $http.delete(getBaseUrl() + '/' + id);
           };
 

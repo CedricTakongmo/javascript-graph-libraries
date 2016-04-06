@@ -3,10 +3,15 @@
 
 /**
  * @ngdoc function
- * @name javascriptGraphLibrariesApp.controller:raphaeldraculaCtrl
+ * @name Controller.Controller:raphaeldraculaCtrl
+ * @requires $scope
+ * @requires Factory.Factory:graphFactory
+ * @requires cfpLoadingBar
+ * @requires $timeout
  * @description
- * # raphaeldraculaCtrl
- * Controller of the javascriptGraphLibrariesApp
+ * # raphaeldracula - Controller
+ * Dracula.js is a set of tools to display and layout interactive connected
+ * graphs and networks, along with various related algorithms from the field of graph theory.
  */
 angular.module('javascriptGraphLibrariesApp')
         .controller('raphaeldraculaCtrl', ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
