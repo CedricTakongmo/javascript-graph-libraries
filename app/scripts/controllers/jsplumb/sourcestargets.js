@@ -1,4 +1,4 @@
-/*globals $, angular, jsPlumb*/
+/*globals $, angular, Math, jsPlumb*/
 'use strict';
 
 /**
@@ -7,6 +7,7 @@
  * @requires window
  * @requires angular
  * @requires jsplumb
+ * @requires Math
  * @param {object} Factory.Factory:graphFactory graphFactory
  * @param {object} cfpLoadingBar cfpLoadingBar
  * @param {object} $timeout $timeout
@@ -15,7 +16,7 @@
  * # JsPlumb Sources - Targets Factory
  * An example of using elements as drag sources and targets.
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbSourcesTargetsFactory', [ function(graphFactory, cfpLoadingBar, $timeout) {
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbSourcesTargetsFactory', ['graphFactory', 'cfpLoadingBar', '$timeout', function(graphFactory, cfpLoadingBar, $timeout) {
 
       function initializate() {
 
