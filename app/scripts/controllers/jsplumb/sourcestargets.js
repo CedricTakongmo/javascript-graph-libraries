@@ -23,7 +23,7 @@ angular.module('javascriptGraphLibrariesApp').factory('jsplumbSourcesTargetsFact
         return graphFactory.getGraphs();
       }
 
-      function draw(data) {grunt
+      function draw(data) {
         cfpLoadingBar.start();
         $timeout(function() {
           cfpLoadingBar.complete();
