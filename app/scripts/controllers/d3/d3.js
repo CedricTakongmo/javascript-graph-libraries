@@ -8,9 +8,9 @@
  * @requires window
  * @requires angular
  * @requires d3
- * @param {type} $scope $scope
- * @param {type} d3NetworkFactory d3NetworkFactory
- * @param {type} d3GanttChartControllFactory d3GanttChartControllFactory
+ * @param {object} $scope $scope
+ * @param {object} d3NetworkFactory d3NetworkFactory
+ * @param {object} d3GanttChartControllFactory d3GanttChartControllFactory
  * @returns {undefined} void
  * @description
  * # d3 - Controller

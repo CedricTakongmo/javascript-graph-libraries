@@ -6,10 +6,10 @@
  * @name Controller.Controller:raphaeldraculaCtrl
  * @requires angular
  * @requires Graph
- * @param {type} $scope $scope
- * @param {type} Factory.Factory:graphFactory Graph Factory
- * @param {type} cfpLoadingBar cfp Loading Bar
- * @param {type} $timeout $timeout
+ * @param {object} $scope $scope
+ * @param {object} Factory.Factory:graphFactory Graph Factory
+ * @param {object} cfpLoadingBar cfp Loading Bar
+ * @param {object} $timeout $timeout
  * @returns {undefined} void
  * @description
  * # raphaeldracula - Controller

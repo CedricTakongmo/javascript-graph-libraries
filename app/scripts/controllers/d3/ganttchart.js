@@ -7,9 +7,9 @@
  * @requires window
  * @requires angular
  * @requires d3
- * @param {type} d3CangttChartFactory Factory.Factory:d3CangttChartFactory
- * @param {type} cfpLoadingBar cfpLoadingBar
- * @param {type} $timeout $timeout
+ * @param {object} d3CangttChartFactory Factory.Factory:d3CangttChartFactory
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
  * @returns {ganttchart_L19.ganttchartAnonym$8} ganttchart_L19.ganttchartAnonym$8
  * @description
  * # d3 Gantt Chart

@@ -7,9 +7,9 @@
  * @requires $
  * @requires angular
  * @requires joint
- * @param {type} Factory.Factory:jointjsNetworkFactory jointjsNetworkFactory
- * @param {type} Factory.Factory:jointjsOrganizationalFactory jointjsOrganizationalFactory
- * @param {type} Factory.Factory:jointjsPetrinetsFactory jointjsPetrinetsFactory
+ * @param {object} Factory.Factory:jointjsNetworkFactory jointjsNetworkFactory
+ * @param {object} Factory.Factory:jointjsOrganizationalFactory jointjsOrganizationalFactory
+ * @param {object} Factory.Factory:jointjsPetrinetsFactory jointjsPetrinetsFactory
  * @returns {undefined} void
  * @description
  * # jointJSCtrl

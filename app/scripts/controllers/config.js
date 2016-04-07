@@ -5,11 +5,11 @@
  * @name Controller.Controller:ConfigCtrl
  * @requires angular
  * @requires $
- * @param {type} $scope $scope
- * @param {type} appSettings appSettings
- * @param {type} $translate $translate
- * @param {type} performanceFactory performanceFactory
- * @param {type} languageFactory languageFactory
+ * @param {object} $scope $scope
+ * @param {object} appSettings appSettings
+ * @param {object} $translate $translate
+ * @param {object} performanceFactory performanceFactory
+ * @param {object} languageFactory languageFactory
  * @returns {undefined} void
  * @description
  * # Config - Controller

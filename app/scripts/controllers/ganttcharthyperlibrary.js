@@ -10,7 +10,7 @@
  * @requires toggleDependencyConstraintsCommand
  * @requires toggleBaselineCommand
  * @requires highlightCriticalPathCommand
- * @param {type} $scope $scope
+ * @param {object} $scope $scope
  * @returns {undefined} void
  * @description
  * # Gantt chart Hyper library Controller

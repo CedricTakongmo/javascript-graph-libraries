@@ -7,8 +7,8 @@
  * @requires $
  * @requires angular
  * @requires joint
- * @param {type} cfpLoadingBar cfpLoadingBar
- * @param {type} $timeout $timeout
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
  * @returns {organizational_L16.organizationalAnonym$18} organizational_L16.organizationalAnonym$18
  * @description
  * # jointjsOrganizationalFactory

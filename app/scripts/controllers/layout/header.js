@@ -5,8 +5,8 @@
  * @name Controller.Controller:headerCtrl
  * @requires $scope
  * @requires $location
- * @param {type} $scope $scope
- * @param {type} $location $location
+ * @param {object} $scope $scope
+ * @param {object} $location $location
  * @returns {undefined} void
  * @description
  * # Header - Controller

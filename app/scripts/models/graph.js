@@ -6,8 +6,8 @@
  * @name Factory.Factory:graphFactory
  * @requires $http
  * @requires appSettings
- * @param {type} $http $http
- * @param {type} appSettings appSettings
+ * @param {object} $http $http
+ * @param {object} appSettings appSettings
  * @returns {Factory.Factory:graphFactory} Factory.Factory:graphFactory
  * @description
  * # Graph Factory

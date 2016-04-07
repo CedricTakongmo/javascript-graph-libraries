@@ -7,9 +7,9 @@
  * @requires window
  * @requires angular
  * @requires jsplumb
- * @param {type} Factory.Factory:graphFactory graphFactory
- * @param {type} cfpLoadingBar cfpLoadingBar
- * @param {type} $timeout $timeout
+ * @param {object} Factory.Factory:graphFactory graphFactory
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
  * @returns {sourcestargets_L18.sourcestargetsAnonym$17} sourcestargets_L18.sourcestargetsAnonym$17
  * @description
  * # JsPlumb Sources - Targets Factory

@@ -6,8 +6,8 @@
  * @name Factory.Factory:performanceFactory
  * @requires $http
  * @requires appSettings
- * @param {type} $http $http
- * @param {type} appSettings appSettings
+ * @param {object} $http $http
+ * @param {object} appSettings appSettings
  * @returns {performance_L18.dataFactory} Factory.Factory:performanceFactory
  * @description
  * # Performance Factory

@@ -6,8 +6,8 @@
  * @name Factory.Factory:d3GanttChartFactory
  * @requires $http
  * @requires appSettings
- * @param {type} $http $http
- * @param {type} appSettings appSettings
+ * @param {object} $http $http
+ * @param {object} appSettings appSettings
  * @returns {d3GanttChart_L18.dataFactory} Factory.Factory:d3GanttChartFactory
  * @description
  * # d3GanttChartFactory

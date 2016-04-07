@@ -6,9 +6,9 @@
  * @requires $
  * @requires angular
  * @requires joint
- * @param {type} Factory.Factory:graphFactory graphFactory
- * @param {type} cfpLoadingBar cfpLoadingBar
- * @param {type} $timeout $timeout
+ * @param {object} Factory.Factory:graphFactory graphFactory
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
  * @returns {network_L17.networkAnonym$5} network_L17.networkAnonym$5
  * @description
  * # jointjsNetworkFactory

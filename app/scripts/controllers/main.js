@@ -5,8 +5,8 @@
  * @ngdoc function
  * @name Controller.Controller:MainCtrl
  * @requires angular
- * @param {type} cfpLoadingBar cfpLoadingBar
- * @param {type} $timeout $timeout
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
  * @description
  * # Main - Controller
  * <div id="readme" class="readme boxed-group clearfix announce instapaper_body md">
@@ -15,9 +15,9 @@
 
             <p>
                 <a target="_blank" href="https://travis-ci.org/CedricTakongmo/javascript-graph-libraries">
-                    </a></p><p class="lead"><a href="https://travis-ci.org/CedricTakongmo/javascript-graph-libraries">
+                    </a></p><p class="lead"><a target="_blank" href="https://travis-ci.org/CedricTakongmo/javascript-graph-libraries">
                         <img alt="Build state" src="https://travis-ci.org/CedricTakongmo/javascript-graph-libraries.svg?branch=master"><br>
-                    </a></p><a href="https://travis-ci.org/CedricTakongmo/javascript-graph-libraries">
+                    </a></p><a target="_blank" href="https://travis-ci.org/CedricTakongmo/javascript-graph-libraries">
                 </a>
             <p></p>
 
@@ -25,7 +25,7 @@
 
             <ol>
                 <li>
-                    <p>Install <a href="https://nodejs.org/en/download/"><strong>NodeJS</strong></a>
+                    <p>Install <a target="_blank" href="https://nodejs.org/en/download/"><strong>NodeJS</strong></a>
                         <br>It will normaly install the npm package.</p>
                 </li>
                 <li>

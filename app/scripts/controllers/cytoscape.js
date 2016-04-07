@@ -9,10 +9,10 @@
  * @requires $
  * @requires angular
  * @requires cytoscape
- * @param {type} $scope $scope
- * @param {type} Factory.Factory:graphFactory graphFactory
- * @param {type} cfpLoadingBar cfpLoadingBar
- * @param {type} $timeout $timeout
+ * @param {object} $scope $scope
+ * @param {object} Factory.Factory:graphFactory graphFactory
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
  * @returns {undefined} void
  * @description
  * # Cytoscape - Controller

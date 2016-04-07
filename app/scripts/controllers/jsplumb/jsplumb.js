@@ -7,10 +7,10 @@
  * @requires window
  * @requires angular
  * @requires jsplumb
- * @param {type} jsplumbSourcesTargetsFactory jsplumb Sources Targets Factory.
- * @param {type} jsplumbFlowChartFactory jsplumb FlowChart Factory.
- * @param {type} jsplumbStateMachineFactory jsplumb State Machine Factory.
- * @param {type} jsplumbDragAndDropFactory jsplumb Drag and Drop Factory.
+ * @param {object} jsplumbSourcesTargetsFactory jsplumb Sources Targets Factory.
+ * @param {object} jsplumbFlowChartFactory jsplumb FlowChart Factory.
+ * @param {object} jsplumbStateMachineFactory jsplumb State Machine Factory.
+ * @param {object} jsplumbDragAndDropFactory jsplumb Drag and Drop Factory.
  * @description
  * # JsPlumb Controller
  * jsPlumb provides a means for a developer to visually connect elements on their web pages.

@@ -6,8 +6,8 @@
  * @name Factory.Factory:languageFactory
  * @requires $http
  * @requires appSettings
- * @param {type} $http $http
- * @param {type} appSettings appSettings
+ * @param {object} $http $http
+ * @param {object} appSettings appSettings
  * @returns {language_L18.dataFactory} Factory.Factory:languageFactory
  * @description
  * # Language Factory
