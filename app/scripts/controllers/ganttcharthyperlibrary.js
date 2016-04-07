@@ -3,7 +3,15 @@
 /**
  * @ngdoc function
  * @name Controller.Controller:ganttcharthyperlibraryCtrl
- * @requires $scope
+ * @requires document
+ * @requires angular
+ * @requires alert
+ * @requires DlhSoft
+ * @requires toggleDependencyConstraintsCommand
+ * @requires toggleBaselineCommand
+ * @requires highlightCriticalPathCommand
+ * @param {object} $scope $scope
+ * @returns {undefined} void
  * @description
  * # Gantt chart Hyper library Controller
  * Gantt, Schedule, Load, and PERT Chart components with multi-platform support,
@@ -21,117 +29,117 @@ angular.module(
                   date = new Date(),
                   year = date.getFullYear(),
                   month = date.getMonth(),
-                    items = [{
-                      content: 'Task 1',
-                      isExpanded: false
-                    }, {
-                      content: 'Task 1.1',
-                      indentation: 1,
-                      start: new Date(
-                              year,
-                              month,
-                              2, 8, 0,
-                              0),
-                      finish: new Date(
-                              year,
-                              month,
-                              4, 16,
-                              0, 0)
-                    }, {
-                      content: 'Task 1.2',
-                      indentation: 1,
-                      start: new Date(
-                              year,
-                              month,
-                              3, 8, 0,
-                              0),
-                      finish: new Date(
-                              year,
-                              month,
-                              5, 12,
-                              0, 0)
-                    }, {
-                      content: 'Task 2',
-                      isExpanded: true
-                    }, {
-                      content: 'Task 2.1',
-                      indentation: 1,
-                      start: new Date(
-                              year,
-                              month,
-                              2, 8, 0,
-                              0),
-                      finish: new Date(
-                              year,
-                              month,
-                              8, 16,
-                              0, 0),
-                      completedFinish: new Date(
-                              year,
-                              month,
-                              5, 16,
-                              0, 0),
-                      assignmentsContent: 'Resource 1, Resource 2 [50%]'
-                    }, {
-                      content: 'Task 2.2',
-                      indentation: 1
-                    }, {
-                      content: 'Task 2.2.1',
-                      indentation: 2,
-                      start: new Date(
-                              year,
-                              month,
-                              11, 8,
-                              0, 0),
-                      finish: new Date(
-                              year,
-                              month,
-                              12, 16,
-                              0, 0),
-                      completedFinish: new Date(
-                              year,
-                              month,
-                              12, 16,
-                              0, 0),
-                      assignmentsContent: 'Resource 2'
-                    }, {
-                      content: 'Task 2.2.2',
-                      indentation: 2,
-                      start: new Date(
-                              year,
-                              month,
-                              12, 12,
-                              0, 0),
-                      finish: new Date(
-                              year,
-                              month,
-                              14, 16,
-                              0, 0),
-                      assignmentsContent: 'Resource 2'
-                    }, {
-                      content: 'Task 3',
-                      indentation: 1,
-                      start: new Date(
-                              year,
-                              month,
-                              15, 16,
-                              0, 0),
-                      isMilestone: true
-                    }],
-                settings,
-                columns,
-                isWaitingToRefreshScheduleChartView,
-                isWaitingToRefreshScheduleChartViewDisplayedTime,
-                isWaitingToRefreshScheduleChartViewSplitterPosition,
-                isWaitingToRefreshLoadChartView,
-                isWaitingToRefreshLoadChartViewDisplayedTime,
-                isWaitingToRefreshLoadChartViewSplitterPosition,
-                isWaitingToRefreshGanttChartViewDisplayedTime,
-                isWaitingToRefreshGanttChartViewSplitterPosition,
-                originalItemPropertyChangeHandler,
-                copiedItem,
-                indexOffset,
-                i;
+                        items = [{
+                          content: 'Task 1',
+                          isExpanded: false
+                        }, {
+                          content: 'Task 1.1',
+                          indentation: 1,
+                          start: new Date(
+                                  year,
+                                  month,
+                                  2, 8, 0,
+                                  0),
+                          finish: new Date(
+                                  year,
+                                  month,
+                                  4, 16,
+                                  0, 0)
+                        }, {
+                          content: 'Task 1.2',
+                          indentation: 1,
+                          start: new Date(
+                                  year,
+                                  month,
+                                  3, 8, 0,
+                                  0),
+                          finish: new Date(
+                                  year,
+                                  month,
+                                  5, 12,
+                                  0, 0)
+                        }, {
+                          content: 'Task 2',
+                          isExpanded: true
+                        }, {
+                          content: 'Task 2.1',
+                          indentation: 1,
+                          start: new Date(
+                                  year,
+                                  month,
+                                  2, 8, 0,
+                                  0),
+                          finish: new Date(
+                                  year,
+                                  month,
+                                  8, 16,
+                                  0, 0),
+                          completedFinish: new Date(
+                                  year,
+                                  month,
+                                  5, 16,
+                                  0, 0),
+                          assignmentsContent: 'Resource 1, Resource 2 [50%]'
+                        }, {
+                          content: 'Task 2.2',
+                          indentation: 1
+                        }, {
+                          content: 'Task 2.2.1',
+                          indentation: 2,
+                          start: new Date(
+                                  year,
+                                  month,
+                                  11, 8,
+                                  0, 0),
+                          finish: new Date(
+                                  year,
+                                  month,
+                                  12, 16,
+                                  0, 0),
+                          completedFinish: new Date(
+                                  year,
+                                  month,
+                                  12, 16,
+                                  0, 0),
+                          assignmentsContent: 'Resource 2'
+                        }, {
+                          content: 'Task 2.2.2',
+                          indentation: 2,
+                          start: new Date(
+                                  year,
+                                  month,
+                                  12, 12,
+                                  0, 0),
+                          finish: new Date(
+                                  year,
+                                  month,
+                                  14, 16,
+                                  0, 0),
+                          assignmentsContent: 'Resource 2'
+                        }, {
+                          content: 'Task 3',
+                          indentation: 1,
+                          start: new Date(
+                                  year,
+                                  month,
+                                  15, 16,
+                                  0, 0),
+                          isMilestone: true
+                        }],
+                    settings,
+                    columns,
+                    isWaitingToRefreshScheduleChartView,
+                    isWaitingToRefreshScheduleChartViewDisplayedTime,
+                    isWaitingToRefreshScheduleChartViewSplitterPosition,
+                    isWaitingToRefreshLoadChartView,
+                    isWaitingToRefreshLoadChartViewDisplayedTime,
+                    isWaitingToRefreshLoadChartViewSplitterPosition,
+                    isWaitingToRefreshGanttChartViewDisplayedTime,
+                    isWaitingToRefreshGanttChartViewSplitterPosition,
+                    originalItemPropertyChangeHandler,
+                    copiedItem,
+                    indexOffset,
+                    i;
           items[3].predecessors = [{
             item: items[0],
             dependencyType: 'SS'
@@ -248,49 +256,49 @@ angular.module(
           // columns[0 + indexOffset].width = 240;
           // Optionally, add supplemental columns.
           columns.splice(0 +
-                    indexOffset, 0, {
-                      header: '',
-                      width: 40,
-                      cellTemplate: DlhSoft
-                              .Controls.GanttChartView
-                              .getIndexColumnTemplate()
-                    });
+                        indexOffset, 0, {
+                          header: '',
+                          width: 40,
+                          cellTemplate: DlhSoft
+                                  .Controls.GanttChartView
+                                  .getIndexColumnTemplate()
+                        });
           columns.splice(3 +
-                    indexOffset, 0, {
-                      header: 'Effort (h)',
-                      width: 80,
-                      cellTemplate: DlhSoft
-                              .Controls.GanttChartView
-                              .getTotalEffortColumnTemplate(
-                                      64)
-                    });
+                        indexOffset, 0, {
+                          header: 'Effort (h)',
+                          width: 80,
+                          cellTemplate: DlhSoft
+                                  .Controls.GanttChartView
+                                  .getTotalEffortColumnTemplate(
+                                          64)
+                        });
           columns.splice(4 +
-                    indexOffset, 0, {
-                      header: 'Duration (d)',
-                      width: 80,
-                      cellTemplate: DlhSoft
-                              .Controls.GanttChartView
-                              .getDurationColumnTemplate(
-                                      64, 8)
-                    });
+                        indexOffset, 0, {
+                          header: 'Duration (d)',
+                          width: 80,
+                          cellTemplate: DlhSoft
+                                  .Controls.GanttChartView
+                                  .getDurationColumnTemplate(
+                                          64, 8)
+                        });
           columns.splice(8 +
-                    indexOffset, 0, {
-                      header: '%',
-                      width: 80,
-                      cellTemplate: DlhSoft
-                              .Controls.GanttChartView
-                              .getCompletionColumnTemplate(
-                                      64)
-                    });
+                        indexOffset, 0, {
+                          header: '%',
+                          width: 80,
+                          cellTemplate: DlhSoft
+                                  .Controls.GanttChartView
+                                  .getCompletionColumnTemplate(
+                                          64)
+                        });
           columns.splice(9 +
-                    indexOffset, 0, {
-                      header: 'Predecessors',
-                      width: 100,
-                      cellTemplate: DlhSoft
-                              .Controls.GanttChartView
-                              .getPredecessorsColumnTemplate(
-                                      84)
-                    });
+                        indexOffset, 0, {
+                          header: 'Predecessors',
+                          width: 100,
+                          cellTemplate: DlhSoft
+                                  .Controls.GanttChartView
+                                  .getPredecessorsColumnTemplate(
+                                          84)
+                        });
           columns.push({
             header: 'Cost ($)',
             width: 100,
@@ -814,24 +822,24 @@ angular.module(
                             scheduleChartSettings
                             );
             scheduleChartSettings.displayedTimeChangeHandler =
-                        function(
-                                displayedTime) {
-                          refreshViewsDisplayedTime
-                                  (
-                                          'ScheduleChart',
-                                          displayedTime
-                                          );
-                        };
+                            function(
+                                    displayedTime) {
+                              refreshViewsDisplayedTime
+                                      (
+                                              'ScheduleChart',
+                                              displayedTime
+                                              );
+                            };
             scheduleChartSettings.splitterPositionChangeHandler =
-                        function(gridWidth,
-                                chartWidth) {
-                          refreshViewsSplitterPosition
-                                  (
-                                          'ScheduleChart',
-                                          gridWidth,
-                                          chartWidth
-                                          );
-                        };
+                            function(gridWidth,
+                                    chartWidth) {
+                              refreshViewsSplitterPosition
+                                      (
+                                              'ScheduleChart',
+                                              gridWidth,
+                                              chartWidth
+                                              );
+                            };
           }
 
           function closeScheduleChartView() {
@@ -870,24 +878,24 @@ angular.module(
                             loadChartSettings
                             );
             loadChartSettings.displayedTimeChangeHandler =
-                        function(
-                                displayedTime) {
-                          refreshViewsDisplayedTime
-                                  (
-                                          'LoadChart',
-                                          displayedTime
-                                          );
-                        };
+                            function(
+                                    displayedTime) {
+                              refreshViewsDisplayedTime
+                                      (
+                                              'LoadChart',
+                                              displayedTime
+                                              );
+                            };
             loadChartSettings.splitterPositionChangeHandler =
-                        function(gridWidth,
-                                chartWidth) {
-                          refreshViewsSplitterPosition
-                                  (
-                                          'LoadChart',
-                                          gridWidth,
-                                          chartWidth
-                                          );
-                        };
+                            function(gridWidth,
+                                    chartWidth) {
+                              refreshViewsSplitterPosition
+                                      (
+                                              'LoadChart',
+                                              gridWidth,
+                                              chartWidth
+                                              );
+                            };
             refreshLoadChartResourceSelector
                     ();
           }
@@ -1162,51 +1170,51 @@ angular.module(
           originalItemPropertyChangeHandler =
                   settings.itemPropertyChangeHandler;
           settings.itemPropertyChangeHandler =
-                    function(item,
-                            propertyName,
-                            isDirect, isFinal) {
-                      if (isDirect &&
-                              isFinal && ((!
-                                      item.hasChildren &&
-                                      (
-                                              propertyName === 'content' ||
-                                              propertyName === 'start' ||
-                                              propertyName === 'finish' ||
-                                              propertyName === 'completedFinish' ||
-                                              propertyName === 'isMilestone' ||
-                                              propertyName === 'assignmentsContent'
-                                              )) || propertyName === 'indentation'
-                                      )) {
-                        refreshOtherViews();
-                      }
-                      if (typeof originalItemPropertyChangeHandler !==
-                              'undefined') {
-                        originalItemPropertyChangeHandler(
-                                item,
+                        function(item,
                                 propertyName,
-                                isDirect,
-                                isFinal);
-                      }
-                    };
+                                isDirect, isFinal) {
+                          if (isDirect &&
+                                  isFinal && ((!
+                                          item.hasChildren &&
+                                          (
+                                                  propertyName === 'content' ||
+                                                  propertyName === 'start' ||
+                                                  propertyName === 'finish' ||
+                                                  propertyName === 'completedFinish' ||
+                                                  propertyName === 'isMilestone' ||
+                                                  propertyName === 'assignmentsContent'
+                                                  )) || propertyName === 'indentation'
+                                          )) {
+                            refreshOtherViews();
+                          }
+                          if (typeof originalItemPropertyChangeHandler !==
+                                  'undefined') {
+                            originalItemPropertyChangeHandler(
+                                    item,
+                                    propertyName,
+                                    isDirect,
+                                    isFinal);
+                          }
+                        };
           settings.displayedTimeChangeHandler =
-                    function(displayedTime) {
-                      refreshViewsDisplayedTime
-                              ('GanttChart',
-                                      displayedTime
-                                      );
-                    };
+                        function(displayedTime) {
+                          refreshViewsDisplayedTime
+                                  ('GanttChart',
+                                          displayedTime
+                                          );
+                        };
           settings.splitterPositionChangeHandler =
-                    function(gridWidth,
-                            chartWidth) {
-                      refreshViewsSplitterPosition
-                              ('GanttChart',
-                                      gridWidth,
-                                      chartWidth);
-                    };
+                        function(gridWidth,
+                                chartWidth) {
+                          refreshViewsSplitterPosition
+                                  ('GanttChart',
+                                          gridWidth,
+                                          chartWidth);
+                        };
           settings.hourWidthChangeHandler =
-                    function() {
-                      refreshOtherViews();
-                    };
+                        function() {
+                          refreshOtherViews();
+                        };
 
           function refreshOtherViews() {
             refreshScheduleChartView

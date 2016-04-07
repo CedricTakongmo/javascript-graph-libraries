@@ -3,16 +3,21 @@
 /**
  * @ngdoc function
  * @name Factory.Factory:jointjsOrganizationalFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires window
+ * @requires $
+ * @requires angular
+ * @requires joint
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
+ * @returns {object} jointjsOrganizationalFactory
  * @description
  * # jointjsOrganizationalFactory
- * Example of the javascriptGraphLibrariesApp
+ * Factory for generating JointJS Organizational Chart
  */
 angular.module('javascriptGraphLibrariesApp').factory('jointjsOrganizationalFactory', ['cfpLoadingBar', '$timeout',
     function(cfpLoadingBar, $timeout) {
       function initializate() {
-      }
+        }
 
       function draw() {
         cfpLoadingBar.start();
@@ -42,7 +47,7 @@ angular.module('javascriptGraphLibrariesApp').factory('jointjsOrganizationalFact
                 stroke: 'none'
               },
               image: {
-                'xlink:href': window.location.origin + window.location.pathname + '/images/' + image,
+                'xlink:href': window.location.origin + window.location.pathname + 'images/' + image,
                 opacity: 0.7
               },
               '.rank': {

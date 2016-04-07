@@ -5,12 +5,15 @@
 /**
  * @ngdoc function
  * @name Controller.Controller:fabricCtrl
+ * @requires fabric
+ * @requires angular
+ * @returns {undefined} void
  * @description
  * # Fabric - Controller
  *  Fabric.js is a powerful and simple
  *  Javascript HTML5 canvas library
  *  Fabric provides interactive object model on top of canvas element
- *  Fabric also has SVG-to-canvas (and canvas-to-SVG) parser
+ *  Fabric also has SVG-to-canvas (and canvas-to-SVG) parser.
  */
 angular.module('javascriptGraphLibrariesApp')
         .controller('fabricCtrl', [function() {

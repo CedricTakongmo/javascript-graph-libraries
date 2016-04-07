@@ -5,9 +5,13 @@
  * @ngdoc function
  * @name Controller.Controller:d3Ctrl
  * @returns {void} void function
- * @requires $scope
- * @requires Factory.Factory:d3NetworkFactory
- * @requires Factory.Factory:d3GanttChartControllFactory
+ * @requires window
+ * @requires angular
+ * @requires d3
+ * @param {object} $scope $scope
+ * @param {object} d3NetworkFactory d3NetworkFactory
+ * @param {object} d3GanttChartControllFactory d3GanttChartControllFactory
+ * @returns {undefined} void
  * @description
  * # d3 - Controller
  * D3.js is a JavaScript library for manipulating documents based on data.

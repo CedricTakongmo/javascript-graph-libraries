@@ -4,16 +4,22 @@
 /**
  * @ngdoc function
  * @name Controller.Controller:cytoscapeCtrl
- * @requires $scope
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires window
+ * @requires document
+ * @requires $
+ * @requires angular
+ * @requires cytoscape
+ * @param {object} $scope $scope
+ * @param {object} Factory.Factory:graphFactory graphFactory
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
+ * @returns {undefined} void
  * @description
  * # Cytoscape - Controller
- * Graph theory (a.k.a. network) library for analysis and visualisation
+ * Graph theory (a.k.a. network) library for analysis and visualisation.
  */
 angular.module('javascriptGraphLibrariesApp')
-        .controller('cytoscapeCtrl', ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
+        .controller('cytoscapeCtrl', ['$scope', 'graphFactory', 'cfpLoadingBar', '$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {
           function initializate() {
 
             graphFactory.getGraphs()
@@ -29,13 +35,13 @@ angular.module('javascriptGraphLibrariesApp')
             }, 5000);
             var graphClone = parseGraph(graph);
             window.cy = cytoscape({
-                       container: document.getElementById('cytoscape-main'),
-                       boxSelectionEnabled: false,
-                       autounselectify: true,
-                       layout: {
-                         name: 'dagre'
-                       },
-                       style: [
+              container: document.getElementById('cytoscape-main'),
+              boxSelectionEnabled: false,
+              autounselectify: true,
+              layout: {
+                name: 'dagre'
+              },
+              style: [
                             {
                               selector: 'node',
                               style: {
@@ -56,8 +62,8 @@ angular.module('javascriptGraphLibrariesApp')
                               }
                             }
                         ],
-                       elements: graphClone.graph
-                     });
+              elements: graphClone.graph
+            });
 
           }
           function parseGraph(graph) {

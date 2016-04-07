@@ -3,15 +3,18 @@
 /**
  * @ngdoc function
  * @name Factory.Factory:jointjsNetworkFactory
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires $
+ * @requires angular
+ * @requires joint
+ * @param {object} Factory.Factory:graphFactory graphFactory
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
+ * @returns {object} jointjsNetworkFactory
  * @description
  * # jointjsNetworkFactory
- * Example of the javascriptGraphLibrariesApp
+ * Factory for generating JointJS Network
  */
-angular.module('javascriptGraphLibrariesApp').factory('jointjsNetworkFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function(graphFactory, cfpLoadingBar, $timeout) {
+angular.module('javascriptGraphLibrariesApp').factory('jointjsNetworkFactory', ['graphFactory', 'cfpLoadingBar', '$timeout', function(graphFactory, cfpLoadingBar, $timeout) {
       function initializate() {
         return graphFactory.getGraphs();
       }

@@ -1,17 +1,18 @@
-/*globals $, angular, joint*/
+/*globals $, angular, document, jsplumb*/
 'use strict';
 /**
  * @ngdoc function
  * @name Factory.Factory:jsplumbStateMachineFactory
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires window
+ * @requires document
+ * @requires angular
+ * @requires jsplumb
+ * @returns {object} jsplumbStateMachineFactory
  * @description
  * # JsPlumb State Machine Factory
- * Example of how to use the 'StateMachine' connectors, with elements as drag sources and targets
+ * Example of how to use the 'StateMachine' connectors, with elements as drag sources and targets.
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbStateMachineFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function() {
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbStateMachineFactory', [ function() {
       function initializate() {
         draw();
       }

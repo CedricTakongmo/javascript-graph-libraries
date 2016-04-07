@@ -1,18 +1,22 @@
-/*globals $, angular, jsPlumb*/
+/*globals $, angular, Math, jsPlumb*/
 'use strict';
 
 /**
  * @ngdoc function
  * @name Factory.Factory:jsplumbSourcesTargetsFactory
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires window
+ * @requires angular
+ * @requires jsplumb
+ * @requires Math
+ * @param {object} Factory.Factory:graphFactory graphFactory
+ * @param {object} cfpLoadingBar cfpLoadingBar
+ * @param {object} $timeout $timeout
+ * @returns {object} jsplumbSourcesTargetsFactory
  * @description
  * # JsPlumb Sources - Targets Factory
- * An example of using elements as drag sources and targets
+ * An example of using elements as drag sources and targets.
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbSourcesTargetsFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function(graphFactory, cfpLoadingBar, $timeout) {
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbSourcesTargetsFactory', ['graphFactory', 'cfpLoadingBar', '$timeout', function(graphFactory, cfpLoadingBar, $timeout) {
 
       function initializate() {
 
