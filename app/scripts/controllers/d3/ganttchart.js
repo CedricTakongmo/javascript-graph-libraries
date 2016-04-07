@@ -10,7 +10,7 @@
  * @param {object} d3CangttChartFactory Factory.Factory:d3CangttChartFactory
  * @param {object} cfpLoadingBar cfpLoadingBar
  * @param {object} $timeout $timeout
- * @returns {ganttchart_L19.ganttchartAnonym$8} ganttchart_L19.ganttchartAnonym$8
+ * @returns {object} d3GanttChartControllFactory
  * @description
  * # d3 Gantt Chart
  * A factory for a basic implementation of a Gantt Chart using D3.js.

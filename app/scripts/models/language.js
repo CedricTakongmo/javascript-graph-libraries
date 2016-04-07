@@ -8,10 +8,10 @@
  * @requires appSettings
  * @param {object} $http $http
  * @param {object} appSettings appSettings
- * @returns {language_L18.dataFactory} Factory.Factory:languageFactory
+ * @returns {object} languageFactory
  * @description
  * # Language Factory
- * Factory of the javascriptGraphLibrariesApp - Generate Language data
+ * Factory of the javascriptGraphLibrariesApp - Get available Languages
  */
 angular.module('javascriptGraphLibrariesApp')
         .factory('languageFactory', ['$http', 'appSettings', function($http, appSettings) {

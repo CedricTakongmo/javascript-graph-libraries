@@ -8,7 +8,7 @@
  * @requires appSettings
  * @param {object} $http $http
  * @param {object} appSettings appSettings
- * @returns {Factory.Factory:graphFactory} Factory.Factory:graphFactory
+ * @returns {object} graphFactory
  * @description
  * # Graph Factory
  * Factory of the javascriptGraphLibrariesApp. Generate Network Graph Data.

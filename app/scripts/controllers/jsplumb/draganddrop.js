@@ -6,7 +6,7 @@
  * @requires window
  * @requires angular
  * @requires jsplumb
- * @returns {draganddrop_L17.draganddropAnonym$20} draganddrop_L17.draganddropAnonym$20
+ * @returns {object} jsplumbDragAndDropFactory
  * @description
  * # jsplumbDragAndDropFactory
  * Example for the original jsPlumb drag and drop example.

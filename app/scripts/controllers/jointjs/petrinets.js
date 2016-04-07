@@ -6,7 +6,7 @@
  * @requires $
  * @requires angular
  * @requires joint
- * @returns {petrinets_L17.petrinetsAnonym$18} petrinets_L17.petrinetsAnonym$18
+ * @returns {object} jointjsPetrinetsFactory
  * @description
  * # jointjsPetrinetsFactory
  * Factory for generating JointJS Petrinet Chart

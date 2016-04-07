@@ -7,7 +7,7 @@
  * @requires document
  * @requires angular
  * @requires jsplumb
- * @returns {statemachine_L17.statemachineAnonym$14} statemachine_L17.statemachineAnonym$14
+ * @returns {object} jsplumbStateMachineFactory
  * @description
  * # JsPlumb State Machine Factory
  * Example of how to use the 'StateMachine' connectors, with elements as drag sources and targets.

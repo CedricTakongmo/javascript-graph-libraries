@@ -10,7 +10,7 @@
  * @param {object} Factory.Factory:d3CangttChartFactory graphFactory
  * @param {object} cfpLoadingBar cfpLoadingBar
  * @param {object} $timeout $timeout
- * @returns {network_L20.networkAnonym$14} network_L20.networkAnonym$14
+ * @returns {object} d3NetworkFactory
  * @description
  * # d3NetworkFactory - Factory
  * This simple force-directed graph. A physical simulation of charged particles

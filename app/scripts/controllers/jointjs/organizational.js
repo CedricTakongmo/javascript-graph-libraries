@@ -9,7 +9,7 @@
  * @requires joint
  * @param {object} cfpLoadingBar cfpLoadingBar
  * @param {object} $timeout $timeout
- * @returns {organizational_L16.organizationalAnonym$18} organizational_L16.organizationalAnonym$18
+ * @returns {object} jointjsOrganizationalFactory
  * @description
  * # jointjsOrganizationalFactory
  * Factory for generating JointJS Organizational Chart

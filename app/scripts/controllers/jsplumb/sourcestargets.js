@@ -11,7 +11,7 @@
  * @param {object} Factory.Factory:graphFactory graphFactory
  * @param {object} cfpLoadingBar cfpLoadingBar
  * @param {object} $timeout $timeout
- * @returns {sourcestargets_L18.sourcestargetsAnonym$17} sourcestargets_L18.sourcestargetsAnonym$17
+ * @returns {object} jsplumbSourcesTargetsFactory
  * @description
  * # JsPlumb Sources - Targets Factory
  * An example of using elements as drag sources and targets.
@@ -23,7 +23,7 @@ angular.module('javascriptGraphLibrariesApp').factory('jsplumbSourcesTargetsFact
         return graphFactory.getGraphs();
       }
 
-      function draw(data) {
+      function draw(data) {grunt
         cfpLoadingBar.start();
         $timeout(function() {
           cfpLoadingBar.complete();

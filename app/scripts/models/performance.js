@@ -8,10 +8,10 @@
  * @requires appSettings
  * @param {object} $http $http
  * @param {object} appSettings appSettings
- * @returns {performance_L18.dataFactory} Factory.Factory:performanceFactory
+ * @returns {object} performanceFactory
  * @description
  * # Performance Factory
- * Factory of the javascriptGraphLibrariesApp. Generate Performance data
+ * Factory of the javascriptGraphLibrariesApp. Generate data for Performance test
  */
 angular.module('javascriptGraphLibrariesApp')
         .factory('performanceFactory', ['$http', 'appSettings', function ($http, appSettings) {

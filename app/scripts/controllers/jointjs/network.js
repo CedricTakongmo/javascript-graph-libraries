@@ -9,7 +9,7 @@
  * @param {object} Factory.Factory:graphFactory graphFactory
  * @param {object} cfpLoadingBar cfpLoadingBar
  * @param {object} $timeout $timeout
- * @returns {network_L17.networkAnonym$5} network_L17.networkAnonym$5
+ * @returns {object} jointjsNetworkFactory
  * @description
  * # jointjsNetworkFactory
  * Factory for generating JointJS Network

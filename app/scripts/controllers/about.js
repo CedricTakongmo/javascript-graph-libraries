@@ -5,7 +5,6 @@
  * @ngdoc function
  * @name Controller.Controller:AboutCtrl
  * @description
- * @returns {undefined} void
  * # AboutCtrl
  * <div id="readme" class="readme boxed-group clearfix announce instapaper_body md">
         <article class="markdown-body entry-content" itemprop="text">
@@ -57,6 +56,7 @@
             <p>Running <code>grunt test</code> will run the unit tests with karma.</p>
         </article>
     </div>
+ * @returns {undefined} void
  */
 angular.module('javascriptGraphLibrariesApp')
   .controller('AboutCtrl', [function() {

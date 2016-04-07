@@ -6,7 +6,7 @@
  * @requires window
  * @requires angular
  * @requires jsplumb
- * @returns {flowchart_L17.flowchartAnonym$28} flowchart_L17.flowchartAnonym$28
+ * @returns {object} jsplumbFlowChartFactory
  * @description
  * # jsplumbFlowChartFactory
  * Example for an example of using the Flowchart connectors.
