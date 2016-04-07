@@ -96,13 +96,6 @@ module.exports = function(grunt) {
           }
         }
       },
-      livedemodocs: {
-        options: {
-          open: true,
-          port: 9001,
-          base:'./docs'
-        }
-      },
       test: {
         options: {
           port: 9001,
@@ -390,6 +383,7 @@ module.exports = function(grunt) {
               '*.html',
               'images/{,*/}*.*',
               'data/{,*/}*.*',
+              'docs/{,*/}*.*',
               'styles/fonts/{,*/}*.*'
           ]
         }, {
@@ -449,8 +443,9 @@ module.exports = function(grunt) {
     },
     ngdocs: {
       options: {
-        dest: './docs',
+        dest: '<%= yeoman.app %>/docs',
         html5Mode: false,
+        startPage: '/api/javascript Graph Libraries',
         title: 'JavaScript Graph Library Documentation'
       },
       all: ['<%= yeoman.app %>/scripts/**/*.js ']
@@ -469,7 +464,6 @@ module.exports = function(grunt) {
                   'concurrent:server',
                   'autoprefixer:server',
                   'connect:livereload',
-                  'connect:livedemodocs',
                   'watch'
               ]);
             });

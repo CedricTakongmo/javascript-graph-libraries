@@ -6,9 +6,12 @@
  * @name Factory.Factory:graphFactory
  * @requires $http
  * @requires appSettings
+ * @param {type} $http $http
+ * @param {type} appSettings appSettings
+ * @returns {Factory.Factory:graphFactory} Factory.Factory:graphFactory
  * @description
  * # Graph Factory
- * Factory of the javascriptGraphLibrariesApp. Generate Graph Data
+ * Factory of the javascriptGraphLibrariesApp. Generate Network Graph Data.
  */
 angular.module('javascriptGraphLibrariesApp')
         .factory('graphFactory', ['$http', 'appSettings', function($http, appSettings) {

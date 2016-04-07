@@ -4,6 +4,13 @@
 /**
  * @ngdoc function
  * @name Controller.Controller:jsplumbCtrl
+ * @requires window
+ * @requires angular
+ * @requires jsplumb
+ * @param {type} jsplumbSourcesTargetsFactory jsplumb Sources Targets Factory.
+ * @param {type} jsplumbFlowChartFactory jsplumb FlowChart Factory.
+ * @param {type} jsplumbStateMachineFactory jsplumb State Machine Factory.
+ * @param {type} jsplumbDragAndDropFactory jsplumb Drag and Drop Factory.
  * @description
  * # JsPlumb Controller
  * jsPlumb provides a means for a developer to visually connect elements on their web pages.

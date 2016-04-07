@@ -6,6 +6,9 @@
  * @name Factory.Factory:languageFactory
  * @requires $http
  * @requires appSettings
+ * @param {type} $http $http
+ * @param {type} appSettings appSettings
+ * @returns {language_L18.dataFactory} Factory.Factory:languageFactory
  * @description
  * # Language Factory
  * Factory of the javascriptGraphLibrariesApp - Generate Language data

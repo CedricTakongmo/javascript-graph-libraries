@@ -1,5 +1,5 @@
- /*exported jglGetTranslations*/
- function jglGetTranslations() {
+/*exported jglGetTranslations*/
+function jglGetTranslations() {
   return {
     EN_US: {
       //index.html
@@ -16,6 +16,7 @@
       APP_NAV_DRACULA: 'Dracula and RaphaelJs',
       APP_NAV_FABRIC: 'Fabric',
       APP_NAV_SETTINGS: 'Settings',
+      APP_API_LINK: 'Api Documentation',
       APP_FOOTER_COMPAGNY: 'Department of mathematics, science and computer sciences (THM)',
       APP_FOOTER_IMPRINT: 'Imprint',
       APP_FOOTER_PRIVACY: 'Privacy',
@@ -61,6 +62,7 @@
       APP_NAV_CYTOSCAPE: 'Cytoscape.js',
       APP_NAV_DRACULA: 'Dracula und RaphaelJs',
       APP_NAV_FABRIC: 'Fabric',
+      APP_API_LINK: 'Api Dokumentation',
       APP_NAV_SETTINGS: 'Einstellungen',
       APP_FOOTER_COMPAGNY: 'Fachbereich Mathematik, Naturwissenschaften und Informatik (THM)',
       APP_FOOTER_IMPRINT: 'Impressum',

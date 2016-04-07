@@ -4,9 +4,13 @@
 /**
  * @ngdoc function
  * @name Factory.Factory:d3NetworkFactory
- * @requires Factory.Factory:d3CangttChartFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires window
+ * @requires angular
+ * @requires d3
+ * @param {type} Factory.Factory:d3CangttChartFactory graphFactory
+ * @param {type} cfpLoadingBar cfpLoadingBar
+ * @param {type} $timeout $timeout
+ * @returns {network_L20.networkAnonym$14} network_L20.networkAnonym$14
  * @description
  * # d3NetworkFactory - Factory
  * This simple force-directed graph. A physical simulation of charged particles

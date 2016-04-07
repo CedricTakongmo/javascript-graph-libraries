@@ -59,7 +59,7 @@
     </div>
  */
 angular.module('javascriptGraphLibrariesApp')
-  .controller('AboutCtrl', [ function() {
+  .controller('AboutCtrl', [function() {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

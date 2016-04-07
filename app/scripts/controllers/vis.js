@@ -4,17 +4,22 @@
 /**
  * @ngdoc function
  * @name Controller.controller:VisCtrl
- * @requires $scope
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires document
+ * @requires alert
+ * @requires angular
+ * @requires vis
+ * @param {type} $scope $scope
+ * @param {type} Factory.Factory:graphFactory graphFactory
+ * @param {type} cfpLoadingBar cfpLoadingBar
+ * @param {type} $timeout $timeout
+ * @returns {undefined} void
  * @description
  * # vis - Controller
  * vis.js
  * A dynamic, browser based visualization library. The library is designed to
  * be easy to use, to handle large amounts of dynamic data, and to enable
  * manipulation of and interaction with the data. The library consists of the
- * components DataSet, Timeline, Network, Graph2d and Graph3d
+ * components DataSet, Timeline, Network, Graph2d and Graph3d.
  */
 angular.module('javascriptGraphLibrariesApp')
     .controller('visCtrl',  ['$scope', 'graphFactory','cfpLoadingBar','$timeout', function($scope, graphFactory, cfpLoadingBar, $timeout) {

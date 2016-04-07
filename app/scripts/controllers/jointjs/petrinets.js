@@ -3,15 +3,15 @@
 /**
  * @ngdoc function
  * @name Factory.Factory:jointjsPetrinetsFactory
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires $
+ * @requires angular
+ * @requires joint
+ * @returns {petrinets_L17.petrinetsAnonym$18} petrinets_L17.petrinetsAnonym$18
  * @description
  * # jointjsPetrinetsFactory
- * Example of the javascriptGraphLibrariesApp
+ * Factory for generating JointJS Petrinet Chart
  */
-angular.module('javascriptGraphLibrariesApp').factory('jointjsPetrinetsFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function() {
+angular.module('javascriptGraphLibrariesApp').factory('jointjsPetrinetsFactory', [function() {
       function initializate() {
         draw();
       }

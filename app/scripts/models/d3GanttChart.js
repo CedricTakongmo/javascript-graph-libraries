@@ -6,9 +6,12 @@
  * @name Factory.Factory:d3GanttChartFactory
  * @requires $http
  * @requires appSettings
+ * @param {type} $http $http
+ * @param {type} appSettings appSettings
+ * @returns {d3GanttChart_L18.dataFactory} Factory.Factory:d3GanttChartFactory
  * @description
  * # d3GanttChartFactory
- * Factory of the javascriptGraphLibrariesApp
+ * Factory of the graph data for d3 Gantt Chart.
  */
 angular.module('javascriptGraphLibrariesApp')
         .factory('d3GanttChartFactory', ['$http', 'appSettings', function($http, appSettings) {

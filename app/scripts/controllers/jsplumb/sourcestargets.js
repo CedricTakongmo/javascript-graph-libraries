@@ -4,15 +4,18 @@
 /**
  * @ngdoc function
  * @name Factory.Factory:jsplumbSourcesTargetsFactory
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires window
+ * @requires angular
+ * @requires jsplumb
+ * @param {type} Factory.Factory:graphFactory graphFactory
+ * @param {type} cfpLoadingBar cfpLoadingBar
+ * @param {type} $timeout $timeout
+ * @returns {sourcestargets_L18.sourcestargetsAnonym$17} sourcestargets_L18.sourcestargetsAnonym$17
  * @description
  * # JsPlumb Sources - Targets Factory
- * An example of using elements as drag sources and targets
+ * An example of using elements as drag sources and targets.
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbSourcesTargetsFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function(graphFactory, cfpLoadingBar, $timeout) {
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbSourcesTargetsFactory', [ function(graphFactory, cfpLoadingBar, $timeout) {
 
       function initializate() {
 

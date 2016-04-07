@@ -3,15 +3,15 @@
 /**
  * @ngdoc function
  * @name Factory.Factory:jsplumbDragAndDropFactory
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires window
+ * @requires angular
+ * @requires jsplumb
+ * @returns {draganddrop_L17.draganddropAnonym$20} draganddrop_L17.draganddropAnonym$20
  * @description
  * # jsplumbDragAndDropFactory
- * Example for the original jsPlumb drag and drop example
+ * Example for the original jsPlumb drag and drop example.
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbDragAndDropFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function() {
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbDragAndDropFactory', [function() {
       function initializate() {
         draw();
       }

@@ -3,10 +3,14 @@
 
 /**
  * @ngdoc function
- * @requires Factory.Factory:jointjsNetworkFactory
- * @requires Factory.Factory:jointjsOrganizationalFactory
- * @requires Factory.Factory:jointjsPetrinetsFactory
  * @name Controller.Controller:jointjsCtrl
+ * @requires $
+ * @requires angular
+ * @requires joint
+ * @param {type} Factory.Factory:jointjsNetworkFactory jointjsNetworkFactory
+ * @param {type} Factory.Factory:jointjsOrganizationalFactory jointjsOrganizationalFactory
+ * @param {type} Factory.Factory:jointjsPetrinetsFactory jointjsPetrinetsFactory
+ * @returns {undefined} void
  * @description
  * # jointJSCtrl
  * <p>

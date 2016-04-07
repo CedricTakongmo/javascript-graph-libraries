@@ -3,15 +3,15 @@
 /**
  * @ngdoc function
  * @name Factory.Factory:jsplumbFlowChartFactory
- * @requires Factory.Factory:graphFactory
- * @requires cfpLoadingBar
- * @requires $timeout
+ * @requires window
+ * @requires angular
+ * @requires jsplumb
+ * @returns {flowchart_L17.flowchartAnonym$28} flowchart_L17.flowchartAnonym$28
  * @description
  * # jsplumbFlowChartFactory
- * Example for an example of using the Flowchart connectors
+ * Example for an example of using the Flowchart connectors.
  */
-angular.module('javascriptGraphLibrariesApp').factory('jsplumbFlowChartFactory', ['graphFactory', 'cfpLoadingBar', '$timeout',
-    function() {
+angular.module('javascriptGraphLibrariesApp').factory('jsplumbFlowChartFactory', [ function() {
       function initializate() {
         draw();
       }

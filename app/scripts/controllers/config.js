@@ -3,14 +3,17 @@
 /**
  * @ngdoc function
  * @name Controller.Controller:ConfigCtrl
- * @requires $scope
- * @requires appSettings
- * @requires $translate
- * @requires Factory.Factory:performanceFactory
- * @requires Factory.Factory:languageFactory
+ * @requires angular
+ * @requires $
+ * @param {type} $scope $scope
+ * @param {type} appSettings appSettings
+ * @param {type} $translate $translate
+ * @param {type} performanceFactory performanceFactory
+ * @param {type} languageFactory languageFactory
+ * @returns {undefined} void
  * @description
  * # Config - Controller
- * Controller of the Config of the app
+ * Controller of the Config of the app.
  */
 angular.module(
         'javascriptGraphLibrariesApp').controller(
@@ -40,7 +43,7 @@ angular.module(
               defaultSelectedIndex: response.data.findIndex(function(element) {
                 return element.value === $translate.use();
               }),
-              onSelected:function(ddslickData) {
+              onSelected: function(ddslickData) {
                 $scope.onLanguageChanged(ddslickData);
               }
             });

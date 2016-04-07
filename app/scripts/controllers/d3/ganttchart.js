@@ -4,10 +4,13 @@
 /**
  * @ngdoc function
  * @name Factory.Factory:d3GanttChartControllFactory
- * @requires Factory.Factory:d3CangttChartFactory
- * @requires cfpLoadingBar
- * @requires $timeout
- * @returns {d3GanttChartFactory} d3GanttChartControllFactory-object
+ * @requires window
+ * @requires angular
+ * @requires d3
+ * @param {type} d3CangttChartFactory Factory.Factory:d3CangttChartFactory
+ * @param {type} cfpLoadingBar cfpLoadingBar
+ * @param {type} $timeout $timeout
+ * @returns {ganttchart_L19.ganttchartAnonym$8} ganttchart_L19.ganttchartAnonym$8
  * @description
  * # d3 Gantt Chart
  * A factory for a basic implementation of a Gantt Chart using D3.js.
@@ -116,14 +119,14 @@ angular.module('javascriptGraphLibrariesApp').factory('d3GanttChartControllFacto
         }
 
         var gantt = d3.gantt()
-            .selector('#d3-gantt-chart')
-            .taskTypes(taskNames)
-            .taskStatus(taskStatus)
-            .tickFormat(format)
-            .height(700)
-            .width(800)
-            .margin(margin)
-            .timeDomainMode('fixed');
+                .selector('#d3-gantt-chart')
+                .taskTypes(taskNames)
+                .taskStatus(taskStatus)
+                .tickFormat(format)
+                .height(700)
+                .width(800)
+                .margin(margin)
+                .timeDomainMode('fixed');
         changeTimeDomain(timeDomainString);
         gantt(tasks);
 
