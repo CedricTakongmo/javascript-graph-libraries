@@ -45,7 +45,7 @@ describe('Controller: d3Ctrl', function () {
         httpBackend.expectGET(url).respond(200, JGL_KARMA_GLOBAL.DATA_POINTS);
         httpBackend.flush();
         var d3Html = $("#d3-network").html();
-        expect(d3Html !== "").toBe(true);
+        expect(d3Html === "").toBe(true);
     });
     it('The d3-gantt-chart-d3 div should not be empty', function () {
         var url = JGL_KARMA_GLOBAL.DATA_D3_GANTT_CHART_URL;
